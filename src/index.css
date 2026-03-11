@@ -128,7 +128,7 @@
   }
 
   .glass-card {
-    @apply transition-all duration-400;
+    @apply transition-all duration-300;
     background: hsl(var(--foreground) / 0.03);
     border: 1px solid hsl(var(--foreground) / 0.08);
   }
