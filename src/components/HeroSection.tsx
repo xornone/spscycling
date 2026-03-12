@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import logoSpsWhite from "@/assets/logo-sps-white.png";
 
 const HeroSection = () => {
   return (
@@ -15,10 +16,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl" style={{ animation: "fadeDown 1s ease-out" }}>
         <span className="section-tag">Club Cycliste · Montpellier</span>
-        <h1 className="font-bebas text-7xl md:text-9xl tracking-wider leading-none mb-4">SPS
-<br />
-          <span className="text-gradient-magenta"></span>
-        </h1>
+        <img
+          src={logoSpsWhite}
+          alt="SPS"
+          className="w-[280px] md:w-[400px] lg:w-[500px] h-auto mx-auto mb-4"
+        />
         <p className="font-barlow text-lg md:text-xl font-light text-foreground/65 max-w-xl mx-auto mb-10 leading-relaxed">
           Club de cyclisme sur route basé à Montpellier. On roule ensemble, on progresse ensemble.
         </p>
