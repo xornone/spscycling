@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Le Club", href: "#about" },
-  { label: "Sorties", href: "#sorties" },
-  { label: "Maillot", href: "#maillot" },
-  { label: "Rejoindre", href: "#rejoindre" },
+  { label: "Le club", href: "#about" },
+  { label: "Les sorties", href: "#sorties" },
   { label: "Contact", href: "#contact" },
 ];
 
