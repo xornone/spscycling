@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoSps from "@/assets/logo-sps.png";
 
 const navLinks = [
   { label: "Le club", href: "#about" },
