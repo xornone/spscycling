@@ -1,49 +1,23 @@
-import { Clock, MapPin, TrendingUp, Users } from "lucide-react";
+import { TrendingUp, Users } from "lucide-react";
 
 const rides = [
   {
-    day: "MARDI",
-    name: "Afterwork Ride",
-    details: [
-      { icon: <Clock size={16} />, text: "18h30 – 20h30" },
-      { icon: <MapPin size={16} />, text: "Départ Place de la Comédie" },
-      { icon: <TrendingUp size={16} />, text: "40-50 km · Vallée du Lez" },
-      { icon: <Users size={16} />, text: "Tous niveaux" },
-    ],
-    pill: "Convivial",
-  },
-  {
     day: "JEUDI",
-    name: "Interval Session",
+    name: "Social Ride du jeudi 🚴 & 🍻",
     details: [
-      { icon: <Clock size={16} />, text: "18h00 – 20h00" },
-      { icon: <MapPin size={16} />, text: "Départ Grammont" },
-      { icon: <TrendingUp size={16} />, text: "35-45 km · Fractions" },
-      { icon: <Users size={16} />, text: "Intermédiaire +" },
+      { icon: <TrendingUp size={16} />, text: "Environ 20km" },
+      { icon: <Users size={16} />, text: "Tous niveaux · Social" },
     ],
-    pill: "Intensif",
-  },
-  {
-    day: "SAMEDI",
-    name: "Sortie Longue",
-    details: [
-      { icon: <Clock size={16} />, text: "08h00 – 12h00" },
-      { icon: <MapPin size={16} />, text: "Départ Antigone" },
-      { icon: <TrendingUp size={16} />, text: "80-120 km · Pic Saint-Loup" },
-      { icon: <Users size={16} />, text: "2 groupes de niveau" },
-    ],
-    pill: "Endurance",
+    pill: "Social",
   },
   {
     day: "DIMANCHE",
-    name: "Café Ride",
+    name: "Sortie longue",
     details: [
-      { icon: <Clock size={16} />, text: "09h00 – 11h30" },
-      { icon: <MapPin size={16} />, text: "Départ Odysseum" },
-      { icon: <TrendingUp size={16} />, text: "50-60 km · Littoral" },
-      { icon: <Users size={16} />, text: "Tous niveaux · Social" },
+      { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
+      { icon: <Users size={16} />, text: "Deux groupes : Groupe vert et Groupe noir" },
     ],
-    pill: "Détente",
+    pill: "Endurance",
   },
 ];
 
