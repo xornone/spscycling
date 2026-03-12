@@ -28,12 +28,9 @@ const JerseySection = () => {
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
             Conçu en partenariat avec <strong className="font-semibold text-foreground/80">Gobik</strong>, notre maillot club incarne l'identité SPS : violet profond, accents magenta, et le logo SPS en signature.
           </p>
-          <p className="text-foreground/65 leading-relaxed font-light mb-8">
+          <p className="text-foreground/65 leading-relaxed font-light">
             Un design unique qui te reconnaît sur la route et renforce l'esprit d'équipe à chaque sortie.
           </p>
-          <a href="#contact" className="btn-sps">
-            Infos commande
-          </a>
         </div>
       </div>
     </section>);
