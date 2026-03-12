@@ -9,15 +9,15 @@ const JerseySection = () => {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)",
-            }}
-          />
+              background: "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)"
+            }} />
+          
           <img
-            src={jerseyImg}
+
             alt="Maillot SPS"
             className="w-4/5 max-w-[360px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-400 group-hover:scale-[1.03] group-hover:-rotate-1"
-            style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }}
-          />
+            style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }} src="/lovable-uploads/c2a059d6-3d9a-4c43-9e66-f75090425330.png" />
+          
         </div>
 
         {/* Text */}
@@ -36,8 +36,8 @@ const JerseySection = () => {
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default JerseySection;
