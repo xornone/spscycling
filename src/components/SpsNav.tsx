@@ -25,8 +25,8 @@ const SpsNav = () => {
       }`}
       style={{ borderBottom: scrolled ? "1px solid hsl(330 85% 49% / 0.15)" : "none" }}
     >
-      <a href="#" className="font-bebas text-2xl tracking-wider text-foreground">
-        SPS <span className="text-gradient-magenta">CYCLING</span>
+      <a href="#" className="flex items-center">
+        <img src={logoSps} alt="SPS Cycling" className="h-8 w-auto" />
       </a>
 
       {/* Desktop */}
