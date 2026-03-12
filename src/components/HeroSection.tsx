@@ -35,9 +35,9 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border bg-background/40 backdrop-blur-md">
         <div className="max-w-5xl mx-auto flex justify-center gap-12 md:gap-20 py-6 px-6">
           {[
-          { value: "2023", label: "Fondé en" },
-          { value: "50+", label: "Membres actifs" },
-          { value: "3", label: "Sorties / semaine" },
+          { value: "2025", label: "Fondé en" },
+          { value: "40+", label: "Membres actifs" },
+          { value: "2", label: "Sorties / semaine" },
           { value: "∞", label: "Kilomètres partagés" }].
           map((stat) =>
           <div key={stat.label} className="text-center">
