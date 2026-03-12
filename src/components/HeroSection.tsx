@@ -1,20 +1,16 @@
-import heroBg from "@/assets/hero-cycling.jpg";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Cyclistes SPS" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/60" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse at 50% 80%, hsl(330 85% 49% / 0.2) 0%, transparent 60%)"
-          }} />
-        
-      </div>
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-background" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 50% 80%, hsl(330 85% 49% / 0.2) 0%, transparent 60%)"
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl" style={{ animation: "fadeDown 1s ease-out" }}>
