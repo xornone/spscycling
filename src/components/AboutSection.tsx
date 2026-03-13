@@ -9,13 +9,17 @@ const AboutSection = () => {
           <h2 className="section-title">Rouler ensemble,<br />progresser ensemble</h2>
           <div className="divider-gradient" />
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            SPS – Solo Plus Solo est né d'une idée simple : réunir des passionnés de vélo de route à Montpellier
+            SPS est né d'une idée simple : réunir des passionnés de vélo de route à Montpellier
             qui veulent partager plus que des kilomètres. On est un club ouvert, bienveillant, où le plaisir
             de rouler ensemble passe avant tout.
           </p>
-          <p className="text-foreground/65 leading-relaxed font-light">
+          <p className="text-foreground/65 leading-relaxed font-light mb-5">
             Que tu sois débutant ou rouleur expérimenté, tu trouveras ta place chez SPS. On propose des
             sorties adaptées à tous les niveaux, dans une ambiance conviviale et motivante.
+          </p>
+          <p className="text-foreground/65 leading-relaxed font-light">
+            Nos sorties sont divisées par groupes de niveau pour que chacun puisse y trouver son compte
+            et progresser à son rythme, sans pression mais toujours dans la bonne humeur.
           </p>
         </div>
 

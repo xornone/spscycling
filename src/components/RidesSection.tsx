@@ -75,6 +75,17 @@ const RidesSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="https://www.strava.com/clubs/spscycling"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-sps"
+          >
+            Retrouvez nos sorties sur Strava
+          </a>
+        </div>
       </div>
     </section>
   );
