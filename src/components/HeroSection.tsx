@@ -1,32 +1,15 @@
 import { ChevronDown } from "lucide-react";
 import logoSpsWhite from "@/assets/logo-sps-white.png";
-import heroBg from "@/assets/hero-bg.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(${heroBg})`,
-        }}
-      />
-      
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-background/70" />
-      
-      {/* Gradient overlays */}
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-background" />
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at 50% 80%, hsl(330 85% 49% / 0.25) 0%, transparent 60%)"
-        }}
-      />
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(to bottom, transparent 0%, hsl(var(--background) / 0.8) 100%)"
+          background: "radial-gradient(ellipse at 50% 80%, hsl(330 85% 49% / 0.2) 0%, transparent 60%)"
         }}
       />
 
