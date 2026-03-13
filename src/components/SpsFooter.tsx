@@ -1,3 +1,5 @@
+import logoSps from "@/assets/logo-sps-white.png";
+
 const SpsFooter = () => {
   return (
     <footer
@@ -7,9 +9,9 @@ const SpsFooter = () => {
         borderTop: "1px solid hsl(0 0% 100% / 0.06)",
       }}
     >
-      <span className="font-bebas text-xl tracking-wider text-foreground/80">
-        SPS <span className="text-gradient-magenta">CYCLING</span>
-      </span>
+      <a href="#">
+        <img src={logoSps} alt="SPS Cycling" className="h-8 w-auto" />
+      </a>
 
       <p className="text-foreground/30 text-sm">
         © {new Date().getFullYear()} SPS – Solo Plus Solo. Montpellier.
