@@ -16,9 +16,15 @@ const Index = () => {
       <AboutSection />
       <RidesSection />
       <JerseySection />
-      <JoinSection />
-      <SocialSection />
-      <ContactSection />
+      <div
+        style={{
+          background: "linear-gradient(180deg, hsl(264 80% 5%) 0%, hsl(264 80% 10%) 30%, hsl(264 80% 8%) 60%, hsl(264 80% 5%) 100%)",
+        }}
+      >
+        <JoinSection />
+        <SocialSection />
+        <ContactSection />
+      </div>
       <SpsFooter />
     </div>
   );

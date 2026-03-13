@@ -1,6 +1,8 @@
 const SocialSection = () => {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-[1200px] mx-auto text-center">
+    <section
+      className="py-20 px-6 md:px-12 max-w-[1200px] mx-auto text-center"
+    >
       <span className="section-tag">Communauté</span>
       <h2 className="section-title">Suis-nous</h2>
       <div className="divider-gradient mx-auto" />

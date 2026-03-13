@@ -22,8 +22,7 @@ const JoinSection = () => {
       id="rejoindre"
       className="w-full py-24 px-6 md:px-12 text-center"
       style={{
-        background: "linear-gradient(135deg, hsl(264 75% 24%) 0%, hsl(264 80% 15%) 100%)",
-        borderTop: "2px solid hsl(330 85% 49%)",
+        background: "linear-gradient(180deg, hsl(264 80% 5%) 0%, hsl(264 75% 18%) 50%, hsl(264 80% 10%) 100%)",
       }}
     >
       <div className="max-w-[700px] mx-auto">
