@@ -22,7 +22,7 @@ const SocialSection = () => {
           Instagram
         </a>
         <a
-          href="https://www.strava.com/clubs/soloplussolo"
+          href="https://www.strava.com/clubs/spscycling"
           target="_blank"
           rel="noopener noreferrer"
           className="glass-card flex items-center gap-4 px-10 py-6 font-barlow-condensed font-bold text-base uppercase tracking-[2px] text-foreground no-underline min-w-[220px] justify-center"
