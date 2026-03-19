@@ -2,8 +2,6 @@ const steps = [
   {
     num: "01",
     title: "Contacte-nous",
-    text: "Envoie-nous un message directement sur Instagram ou par mail à contact@spscycling.fr.",
-    links: true,
   },
   {
     num: "02",
@@ -47,7 +45,16 @@ const JoinSection = () => {
               <div className="font-barlow-condensed text-base font-bold uppercase tracking-wider mb-2 text-foreground">
                 {step.title}
               </div>
-              <p className="text-sm text-foreground/55 leading-relaxed">{step.text}</p>
+              {step.num === "01" ? (
+                <p className="text-sm text-foreground/55 leading-relaxed">
+                  Envoie-nous un message directement sur{" "}
+                  <a href="https://www.instagram.com/spscycling/" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Instagram</a>
+                  {" "}ou par{" "}
+                  <a href="mailto:contact@spscycling.fr" className="text-sps-pink hover:underline">mail</a>.
+                </p>
+              ) : (
+                <p className="text-sm text-foreground/55 leading-relaxed">{step.text}</p>
+              )}
             </div>
           ))}
         </div>
