@@ -21,7 +21,7 @@ const SpsFooter = () => {
         {["Instagram", "Strava", "Contact"].map((link) => (
           <a
             key={link}
-            href={link === "Strava" ? "https://www.strava.com/clubs/spscycling" : link === "Contact" ? "#contact" : "#"}
+            href={link === "Strava" ? "https://www.strava.com/clubs/spscycling" : link === "Instagram" ? "https://www.instagram.com/spscycling/" : link === "Contact" ? "#contact" : "#"}
             target={link === "Strava" ? "_blank" : undefined}
             rel={link === "Strava" ? "noopener noreferrer" : undefined}
             className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/30 hover:text-sps-pink transition-colors"
