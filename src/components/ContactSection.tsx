@@ -66,8 +66,8 @@ const ContactSection = () => {
           className="w-full bg-input border border-border text-foreground px-5 py-4 font-barlow text-[15px] outline-none transition-colors focus:border-sps-magenta placeholder:text-foreground/30 h-36 resize-y"
           required
         />
-        <button type="submit" className="btn-sps justify-self-center mt-2">
-          Envoyer le message
+        <button type="submit" disabled={sending} className="btn-sps justify-self-center mt-2 disabled:opacity-50">
+          {sending ? "Envoi en cours..." : "Envoyer le message"}
         </button>
       </form>
     </section>
