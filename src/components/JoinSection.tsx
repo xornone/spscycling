@@ -2,7 +2,7 @@ const steps = [
   {
     num: "01",
     title: "Contacte-nous",
-    text: "Envoie-nous un message via le formulaire de contact ou sur Instagram.",
+    text: "Envoie-nous un message directement sur Instagram.",
   },
   {
     num: "02",
