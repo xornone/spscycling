@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
 import JoinSection from "@/components/JoinSection";
+import ContactSection from "@/components/ContactSection";
 import SocialSection from "@/components/SocialSection";
 
 import SpsFooter from "@/components/SpsFooter";
@@ -22,6 +23,7 @@ const Index = () => {
         }}
       >
         <JoinSection />
+        <ContactSection />
         <SocialSection />
         
       </div>
