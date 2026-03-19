@@ -16,7 +16,8 @@ const rides = [
     name: "Sortie longue",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
-      { icon: <Users size={16} />, text: "Deux groupes : Groupe vert et Groupe noir" },
+      { icon: <Users size={16} />, text: "Deux groupes : Groupe vert 🟢 et Groupe noir ⚫️" },
+      { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Endurance",
   },
