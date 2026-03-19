@@ -9,9 +9,10 @@ const AboutSection = () => {
           <h2 className="section-title">Rouler ensemble,<br />progresser ensemble</h2>
           <div className="divider-gradient" />
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            SPS est né d'une idée simple : réunir des passionnés de vélo de route à Montpellier
-            qui veulent partager plus que des kilomètres. On est un club ouvert, bienveillant, où le plaisir
-            de rouler ensemble passe avant tout.
+            SPS est né d'une envie commune : on en avait tous marre de rouler seuls. Alors on a créé
+            un club pour réunir des passionnés de vélo de route à Montpellier qui veulent partager
+            plus que des kilomètres. Un club ouvert, bienveillant, où le plaisir de rouler ensemble
+            passe avant tout.
           </p>
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
             Que tu sois débutant ou rouleur expérimenté, tu trouveras ta place chez SPS. On propose des
