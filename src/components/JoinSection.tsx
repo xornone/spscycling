@@ -50,7 +50,7 @@ const JoinSection = () => {
                   Envoie-nous un message directement sur{" "}
                   <a href="https://www.instagram.com/spscycling/" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Instagram</a>
                   {" "}ou{" "}
-                  <a href="mailto:contact@spscycling.fr" className="text-sps-pink hover:underline">contacter le club par mail</a>.
+                  <a href="mailto:contact@spscycling.fr" className="text-sps-pink hover:underline">mail</a>.
                 </p>
               ) : (
                 <p className="text-sm text-foreground/55 leading-relaxed">{step.text}</p>
