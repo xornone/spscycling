@@ -17,7 +17,7 @@ const rides = [
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
       { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 (entre 20 et 25 km/h)" },
-      { icon: <Users size={16} />, text: "Groupe noir ⚫️ (entre 27 et 29 km/h)" },
+      { icon: null, text: "Groupe noir ⚫️ (entre 27 et 29 km/h)" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Endurance",
