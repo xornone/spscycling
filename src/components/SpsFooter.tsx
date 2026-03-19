@@ -18,7 +18,7 @@ const SpsFooter = () => {
       </p>
 
       <div className="flex gap-6">
-        {["Instagram", "Strava", "Contact"].map((link) => (
+        {["Instagram", "Strava"].map((link) => (
           <a
             key={link}
             href={link === "Strava" ? "https://www.strava.com/clubs/spscycling" : link === "Instagram" ? "https://www.instagram.com/spscycling/" : link === "Contact" ? "#contact" : "#"}
