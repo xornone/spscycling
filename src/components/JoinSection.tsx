@@ -48,9 +48,10 @@ const JoinSection = () => {
               {step.num === "01" ? (
                 <p className="text-sm text-foreground/55 leading-relaxed">
                   Envoie-nous un message sur{" "}
-                  <a href="https://www.instagram.com/spscycling/" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Instagram</a>
-                  {" "}ou{" "}
-                  <a href="https://www.strava.com/clubs/spscycling" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Strava</a>.
+                  <a href="https://www.instagram.com/spscycling/" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Instagram</a>,{" "}
+                  <a href="https://www.strava.com/clubs/spscycling" target="_blank" rel="noopener noreferrer" className="text-sps-pink hover:underline">Strava</a>
+                  {" "}ou via le{" "}
+                  <a href="#contact" className="text-sps-pink hover:underline">formulaire de contact</a>.
                 </p>
               ) : (
                 <p className="text-sm text-foreground/55 leading-relaxed">{step.text}</p>
