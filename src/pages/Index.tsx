@@ -23,7 +23,7 @@ const Index = () => {
       >
         <JoinSection />
         <SocialSection />
-        <ContactSection />
+        
       </div>
       <SpsFooter />
     </div>
