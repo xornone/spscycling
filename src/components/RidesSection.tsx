@@ -78,7 +78,7 @@ const RidesSection = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://www.strava.com/clubs/spscycling"
+            href="https://www.strava.com/clubs/soloplussolo"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-sps"
