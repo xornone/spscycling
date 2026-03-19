@@ -1,13 +1,27 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message envoyé ! On te répond bientôt.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setSending(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
+      toast.success("Message envoyé ! On te répond bientôt.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast.error("Erreur lors de l'envoi. Réessaie plus tard.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -52,8 +66,8 @@ const ContactSection = () => {
           className="w-full bg-input border border-border text-foreground px-5 py-4 font-barlow text-[15px] outline-none transition-colors focus:border-sps-magenta placeholder:text-foreground/30 h-36 resize-y"
           required
         />
-        <button type="submit" className="btn-sps justify-self-center mt-2">
-          Envoyer le message
+        <button type="submit" disabled={sending} className="btn-sps justify-self-center mt-2 disabled:opacity-50">
+          {sending ? "Envoi en cours..." : "Envoyer le message"}
         </button>
       </form>
     </section>
