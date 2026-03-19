@@ -2,7 +2,8 @@ const steps = [
   {
     num: "01",
     title: "Contacte-nous",
-    text: "Envoie-nous un message directement sur Instagram.",
+    text: "Envoie-nous un message directement sur Instagram ou par mail à contact@spscycling.fr.",
+    links: true,
   },
   {
     num: "02",
