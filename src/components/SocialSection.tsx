@@ -9,7 +9,7 @@ const SocialSection = () => {
 
       <div className="flex flex-wrap gap-6 justify-center mt-12">
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/spscycling/"
           target="_blank"
           rel="noopener noreferrer"
           className="glass-card flex items-center gap-4 px-10 py-6 font-barlow-condensed font-bold text-base uppercase tracking-[2px] text-foreground no-underline min-w-[220px] justify-center"
