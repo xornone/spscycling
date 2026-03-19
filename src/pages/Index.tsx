@@ -5,7 +5,7 @@ import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
 import JoinSection from "@/components/JoinSection";
 import SocialSection from "@/components/SocialSection";
-import ContactSection from "@/components/ContactSection";
+
 import SpsFooter from "@/components/SpsFooter";
 
 const Index = () => {
