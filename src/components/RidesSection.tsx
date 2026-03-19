@@ -59,8 +59,8 @@ const RidesSection = () => {
 
               <div className="flex flex-col gap-2.5">
                 {ride.details.map((d, i) => (
-                  <div key={i} className="flex items-center gap-3 text-foreground/60 text-[15px] font-light">
-                    <span className="text-sps-magenta">{d.icon}</span>
+                  <div key={i} className="flex items-center gap-3 text-foreground/60 text-[15px] font-light" style={!d.icon ? { paddingLeft: "28px" } : undefined}>
+                    {d.icon && <span className="text-sps-magenta">{d.icon}</span>}
                     {d.text}
                   </div>
                 ))}
