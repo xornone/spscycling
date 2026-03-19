@@ -6,7 +6,7 @@ const rides = [
     name: "Social Ride du jeudi 🚴 & 🍻",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 20km" },
-      { icon: <Users size={16} />, text: "Tous niveaux · Social" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Tous niveaux" },
       { icon: <MapPin size={16} />, text: "Départ depuis le Marché du Lez à 18h15" },
     ],
     pill: "Social",
@@ -16,7 +16,7 @@ const rides = [
     name: "Sortie longue",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
-      { icon: <Users size={16} />, text: "Deux groupes : Groupe vert 🟢 et Groupe noir ⚫️" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 et Groupe noir ⚫️" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Endurance",
