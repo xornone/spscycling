@@ -54,6 +54,7 @@ serve(async (req) => {
         reply_to: email,
         subject: subject || `Message de ${name}`,
         html: htmlContent,
+        text: `Nouveau message de ${name} (${email})\nSujet: ${subject || "Non spécifié"}\n\n${message}`,
         label: "contact_form",
         purpose: "transactional",
         queued_at: new Date().toISOString(),
