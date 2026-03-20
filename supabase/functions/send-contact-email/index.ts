@@ -47,6 +47,7 @@ serve(async (req) => {
       queue_name: "transactional_emails",
       payload: {
         message_id: messageId,
+        idempotency_key: `contact-form-${messageId}`,
         to: "contact@spscycling.fr",
         from: "SPS Cycling <noreply@notify.spscycling.fr>",
         sender_domain: "notify.spscycling.fr",
