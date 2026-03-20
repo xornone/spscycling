@@ -31,6 +31,7 @@ serve(async (req) => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     const messageId = crypto.randomUUID();
+    const unsubscribeToken = crypto.randomUUID();
     const htmlContent = `
       <h2 style="color:#333;font-family:sans-serif;">Nouveau message depuis le site SPS Cycling</h2>
       <table style="font-family:sans-serif;font-size:15px;color:#444;border-collapse:collapse;">
@@ -41,6 +42,18 @@ serve(async (req) => {
       <hr style="border:none;border-top:1px solid #ddd;margin:16px 0;" />
       <p style="font-family:sans-serif;font-size:15px;color:#444;line-height:1.6;">${message.replace(/\n/g, "<br />")}</p>
     `;
+
+    const { error: unsubscribeTokenError } = await supabase
+      .from("email_unsubscribe_tokens")
+      .insert({
+        email: "contact@spscycling.fr",
+        token: unsubscribeToken,
+      });
+
+    if (unsubscribeTokenError) {
+      console.error("Unsubscribe token insert error:", unsubscribeTokenError);
+      throw new Error("Failed to create unsubscribe token");
+    }
 
     // Enqueue to transactional_emails queue
     const { error: enqueueError } = await supabase.rpc("enqueue_email", {
@@ -57,6 +70,7 @@ serve(async (req) => {
         text: `Nouveau message de ${name} (${email})\nSujet: ${subject || "Non spécifié"}\n\n${message}`,
         label: "contact_form",
         purpose: "transactional",
+        unsubscribe_token: unsubscribeToken,
         queued_at: new Date().toISOString(),
         metadata: {
           sender_name: name,
