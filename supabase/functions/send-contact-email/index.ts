@@ -46,7 +46,6 @@ serve(async (req) => {
     const { error: enqueueError } = await supabase.rpc("enqueue_email", {
       queue_name: "transactional_emails",
       payload: {
-        run_id: messageId,
         message_id: messageId,
         to: "contact@spscycling.fr",
         from: "SPS Cycling <noreply@notify.spscycling.fr>",
@@ -58,6 +57,11 @@ serve(async (req) => {
         label: "contact_form",
         purpose: "transactional",
         queued_at: new Date().toISOString(),
+        metadata: {
+          sender_name: name,
+          sender_email: email,
+          form_subject: subject || null,
+        },
       },
     });
 
