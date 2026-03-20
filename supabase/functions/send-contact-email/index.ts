@@ -31,7 +31,8 @@ serve(async (req) => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     const messageId = crypto.randomUUID();
-    const unsubscribeToken = crypto.randomUUID();
+    const generatedUnsubscribeToken = crypto.randomUUID();
+    const recipientEmail = "contact@spscycling.fr";
     const htmlContent = `
       <h2 style="color:#333;font-family:sans-serif;">Nouveau message depuis le site SPS Cycling</h2>
       <table style="font-family:sans-serif;font-size:15px;color:#444;border-collapse:collapse;">
@@ -43,16 +44,31 @@ serve(async (req) => {
       <p style="font-family:sans-serif;font-size:15px;color:#444;line-height:1.6;">${message.replace(/\n/g, "<br />")}</p>
     `;
 
-    const { error: unsubscribeTokenError } = await supabase
+    const { data: existingTokenRow, error: existingTokenError } = await supabase
       .from("email_unsubscribe_tokens")
-      .insert({
-        email: "contact@spscycling.fr",
-        token: unsubscribeToken,
-      });
+      .select("token")
+      .eq("email", recipientEmail)
+      .maybeSingle();
 
-    if (unsubscribeTokenError) {
-      console.error("Unsubscribe token insert error:", unsubscribeTokenError);
-      throw new Error("Failed to create unsubscribe token");
+    if (existingTokenError) {
+      console.error("Unsubscribe token lookup error:", existingTokenError);
+      throw new Error("Failed to load unsubscribe token");
+    }
+
+    const unsubscribeToken = existingTokenRow?.token ?? generatedUnsubscribeToken;
+
+    if (!existingTokenRow) {
+      const { error: unsubscribeTokenError } = await supabase
+        .from("email_unsubscribe_tokens")
+        .insert({
+          email: recipientEmail,
+          token: unsubscribeToken,
+        });
+
+      if (unsubscribeTokenError) {
+        console.error("Unsubscribe token insert error:", unsubscribeTokenError);
+        throw new Error("Failed to create unsubscribe token");
+      }
     }
 
     // Enqueue to transactional_emails queue
@@ -61,7 +77,7 @@ serve(async (req) => {
       payload: {
         message_id: messageId,
         idempotency_key: `contact-form-${messageId}`,
-        to: "contact@spscycling.fr",
+        to: recipientEmail,
         from: "SPS Cycling <noreply@notify.spscycling.fr>",
         sender_domain: "notify.spscycling.fr",
         reply_to: email,
