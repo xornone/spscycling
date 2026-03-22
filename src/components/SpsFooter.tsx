@@ -18,15 +18,20 @@ const SpsFooter = () => {
       </p>
 
       <div className="flex gap-6">
-        {["Instagram", "Strava", "Contact"].map((link) => (
+        {[
+          { label: "Instagram", href: "https://www.instagram.com/spscycling/", external: true },
+          { label: "Strava", href: "https://www.strava.com/clubs/spscycling", external: true },
+          { label: "Contact", href: "#contact", external: false },
+          { label: "Mentions légales", href: "/mentions-legales", external: false },
+        ].map((link) => (
           <a
-            key={link}
-            href={link === "Strava" ? "https://www.strava.com/clubs/spscycling" : link === "Instagram" ? "https://www.instagram.com/spscycling/" : link === "Contact" ? "#contact" : "#"}
-            target={link === "Strava" ? "_blank" : undefined}
-            rel={link === "Strava" ? "noopener noreferrer" : undefined}
+            key={link.label}
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
             className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/30 hover:text-sps-pink transition-colors"
           >
-            {link}
+            {link.label}
           </a>
         ))}
       </div>
