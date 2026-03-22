@@ -6,7 +6,7 @@ import JerseySection from "@/components/JerseySection";
 import JoinSection from "@/components/JoinSection";
 import ContactSection from "@/components/ContactSection";
 import SocialSection from "@/components/SocialSection";
-
+import CookieBanner from "@/components/CookieBanner";
 import SpsFooter from "@/components/SpsFooter";
 
 const Index = () => {
