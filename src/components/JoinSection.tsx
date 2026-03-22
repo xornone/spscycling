@@ -59,7 +59,7 @@ const JoinSection = () => {
           ))}
         </div>
 
-        <a href="#contact" className="btn-sps">
+        <a href="https://www.helloasso.com/associations/sps/adhesions/adhesion-sps-1" target="_blank" rel="noopener noreferrer" className="btn-sps">
           Je veux rejoindre le club
         </a>
       </div>
