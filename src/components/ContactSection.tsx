@@ -68,7 +68,20 @@ const ContactSection = () => {
           className="w-full bg-input border border-border text-foreground px-5 py-4 font-barlow text-[15px] outline-none transition-colors focus:border-sps-magenta placeholder:text-foreground/30 h-36 resize-y"
           required
         />
-        <button type="submit" disabled={sending} className="btn-sps justify-self-center mt-2 disabled:opacity-50">
+        <label className="flex items-start gap-3 cursor-pointer mt-2">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={() => setConsent(!consent)}
+            className="mt-1 h-4 w-4 shrink-0 rounded-sm border-border accent-sps-pink"
+            required
+          />
+          <span className="text-foreground/50 text-xs leading-relaxed">
+            J'accepte que mes données soient utilisées pour être recontacté(e). Consultez nos{" "}
+            <a href="/mentions-legales" className="text-sps-pink hover:underline">mentions légales</a>.
+          </span>
+        </label>
+        <button type="submit" disabled={sending || !consent} className="btn-sps justify-self-center mt-2 disabled:opacity-50">
           {sending ? "Envoi en cours..." : "Envoyer le message"}
         </button>
       </form>
