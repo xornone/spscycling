@@ -63,14 +63,15 @@ const sections = [
     title: "4. Données personnelles",
     content: (
       <>
-        <p>Les informations collectées via le site (formulaire de contact, adhésion, inscription, etc.) sont utilisées uniquement dans le cadre des activités de l'association SPS.</p>
+        <p>Les informations collectées via le site, notamment à travers le formulaire de contact ou les formulaires d'adhésion, sont utilisées uniquement dans le cadre des activités de l'association SPS (gestion des demandes, communication, organisation des activités).</p>
+        <p>Les données collectées sont destinées exclusivement à l'association et ne sont en aucun cas cédées ou vendues à des tiers.</p>
         <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
         <ul className="list-disc list-inside pl-2 space-y-1">
-          <li>droit d'accès à vos données</li>
+          <li>droit d'accès</li>
           <li>droit de rectification</li>
           <li>droit de suppression</li>
         </ul>
-        <p>Pour toute demande : <a href="mailto:contact@spscycling.fr" className="text-sps-pink hover:underline">contact@spscycling.fr</a></p>
+        <p>Vous pouvez exercer ces droits en contactant : <a href="mailto:contact@spscycling.fr" className="text-sps-pink hover:underline">contact@spscycling.fr</a></p>
       </>
     ),
   },
