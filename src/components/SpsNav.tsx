@@ -43,7 +43,9 @@ const SpsNav = () => {
         ))}
         <li>
           <a
-            href="#rejoindre"
+            href="https://www.helloasso.com/associations/sps/adhesions/adhesion-sps-1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-sps !py-2.5 !px-6 !text-xs"
           >
             Nous rejoindre
