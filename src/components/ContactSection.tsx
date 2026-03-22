@@ -17,6 +17,7 @@ const ContactSection = () => {
       if (error) throw error;
       toast.success("Message envoyé ! On te répond bientôt.");
       setFormData({ name: "", email: "", subject: "", message: "" });
+      setConsent(false);
     } catch (err) {
       console.error(err);
       toast.error("Erreur lors de l'envoi. Réessaie plus tard.");
