@@ -75,22 +75,6 @@ const RidesSection = () => {
         </div>
 
 
-        {/* Strava Club Stats Widget */}
-        <div className="mt-16 flex flex-col items-center">
-          <h3 className="font-barlow-condensed text-sm font-semibold uppercase tracking-[3px] text-sps-pink mb-6">
-            ▸ Stats du club
-          </h3>
-          <iframe
-            allowTransparency={true}
-            frameBorder="0"
-            height="160"
-            scrolling="no"
-            src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
-            width="300"
-            title="Statistiques Strava du club SPS"
-            className="block"
-          />
-        </div>
 
         <div className="text-center mt-12">
           <a
