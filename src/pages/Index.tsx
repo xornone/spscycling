@@ -16,6 +16,7 @@ const Index = () => {
       <SpsNav />
       <HeroSection />
       <AboutSection />
+      <NextRideSection />
       <RidesSection />
       <JerseySection />
       <div
