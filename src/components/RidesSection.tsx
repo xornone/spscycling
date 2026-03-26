@@ -100,10 +100,6 @@ const RidesSection = () => {
                 width="300"
                 title="Statistiques Strava du club SPS"
                 className="block"
-                style={{
-                  filter: "invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9)",
-                  opacity: 0.9,
-                }}
               />
             </div>
           </div>
