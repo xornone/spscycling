@@ -682,7 +682,7 @@ function update() {
 }
 
 function renderToCanvas(W, H, S, onBlob, onError) {
-  const S = 2; // 540*2=1080, 720*2=1440
+  // S passed as parameter (scale factor)
 
   const vals = {
     handle:document.getElementById('p-handle').textContent,
