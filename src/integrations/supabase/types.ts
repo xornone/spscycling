@@ -101,6 +101,48 @@ export type Database = {
         }
         Relationships: []
       }
+      rides: {
+        Row: {
+          created_at: string
+          distance: string
+          elevation: string
+          id: string
+          image_url: string | null
+          level: string
+          meeting_point: string
+          ride_date: string
+          ride_time: string
+          ride_type: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          distance: string
+          elevation: string
+          id?: string
+          image_url?: string | null
+          level: string
+          meeting_point: string
+          ride_date: string
+          ride_time: string
+          ride_type?: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          distance?: string
+          elevation?: string
+          id?: string
+          image_url?: string | null
+          level?: string
+          meeting_point?: string
+          ride_date?: string
+          ride_time?: string
+          ride_type?: string
+          title?: string
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
