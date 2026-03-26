@@ -1,5 +1,5 @@
 import { TrendingUp, Users, MapPin } from "lucide-react";
-
+import RidesCarousel from "./RidesCarousel";
 const rides = [
   {
     day: "JEUDI",
@@ -73,6 +73,9 @@ const RidesSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Carrousel photos */}
+        <RidesCarousel />
 
         <div className="text-center mt-12">
           <a
