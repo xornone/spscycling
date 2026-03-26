@@ -74,6 +74,9 @@ const RidesSection = () => {
           ))}
         </div>
 
+        {/* Carrousel photos */}
+        <RidesCarousel />
+
         <div className="text-center mt-12">
           <a
             href="https://www.strava.com/clubs/spscycling"
