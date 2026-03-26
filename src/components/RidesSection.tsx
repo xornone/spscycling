@@ -1,19 +1,4 @@
-import { useEffect, useState } from "react";
-import { TrendingUp, Users, MapPin, Calendar, Clock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-
-interface PublishedRide {
-  id: string;
-  title: string;
-  ride_date: string;
-  ride_time: string;
-  distance: string;
-  elevation: string;
-  level: string;
-  meeting_point: string;
-  ride_type: string;
-  image_url: string | null;
-}
+import { TrendingUp, Users, MapPin } from "lucide-react";
 
 const rides = [
   {
