@@ -1,6 +1,7 @@
 import SpsNav from "@/components/SpsNav";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import NextRideSection from "@/components/NextRideSection";
 import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
 import JoinSection from "@/components/JoinSection";
