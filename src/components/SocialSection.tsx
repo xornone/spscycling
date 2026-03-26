@@ -33,6 +33,19 @@ const SocialSection = () => {
           Strava
         </a>
       </div>
+
+      <div className="flex justify-center mt-10">
+        <iframe
+          allowTransparency={true}
+          frameBorder="0"
+          height="160"
+          scrolling="no"
+          src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
+          width="300"
+          title="Statistiques Strava du club SPS"
+          className="block"
+        />
+      </div>
     </section>
   );
 };
