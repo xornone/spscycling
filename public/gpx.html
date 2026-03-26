@@ -1076,6 +1076,70 @@ function exportPNG() {
   });
 }
 
+// ---- SUPABASE PUBLISH ----
+const sbScript = document.createElement('script');
+sbScript.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+sbScript.onload = function() {
+  window._sb = supabase.createClient(
+    'https://qnmxhownxjlhtdrnufvu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFubXhob3dueGpsaHRkcm51ZnZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5MjU4OTksImV4cCI6MjA4OTUwMTg5OX0.UFgdEuqhHfHVb9etZQE2XaE3vFVVc_pm4Hrh9GmHYts'
+  );
+};
+document.head.appendChild(sbScript);
+
+function showToast(msg, isError) {
+  const t = document.getElementById('publish-toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  t.style.borderColor = isError ? '#ff4444' : '#ff1ea0';
+  setTimeout(() => t.style.display = 'none', 4000);
+}
+
+async function publishToFrontPage() {
+  const btn = document.getElementById('btn-publish');
+  btn.disabled = true;
+  btn.textContent = '⏳ Publication en cours...';
+
+  try {
+    const W = 1080, H = 1440, S = 2;
+    const blob = await new Promise((resolve, reject) => {
+      renderToCanvas(W, H, S, resolve, reject);
+    });
+
+    const fileName = `ride_${Date.now()}.png`;
+    const { data: uploadData, error: uploadErr } = await window._sb.storage
+      .from('ride-images')
+      .upload(fileName, blob, { contentType: 'image/png', upsert: true });
+    if (uploadErr) throw uploadErr;
+
+    const { data: urlData } = window._sb.storage.from('ride-images').getPublicUrl(fileName);
+    const imageUrl = urlData.publicUrl;
+
+    const vals = {
+      title: document.getElementById('i-t1').value + ' ' + document.getElementById('i-t2').value,
+      ride_date: document.getElementById('i-date').value,
+      ride_time: document.getElementById('i-time').value,
+      distance: document.getElementById('i-dist').value,
+      elevation: document.getElementById('i-dplus').value,
+      level: document.getElementById('i-niveau').value,
+      meeting_point: document.getElementById('i-rdv').value,
+      ride_type: document.getElementById('i-type').value,
+      image_url: imageUrl,
+    };
+
+    const { error: insertErr } = await window._sb.from('rides').insert(vals);
+    if (insertErr) throw insertErr;
+
+    showToast('✅ Sortie publiée en page d\'accueil !', false);
+  } catch (e) {
+    console.error(e);
+    showToast('❌ Erreur : ' + e.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🚀 Publier en page d\'accueil';
+  }
+}
+
 // Init date on load
 updateDate();
 
