@@ -80,29 +80,16 @@ const RidesSection = () => {
           <h3 className="font-barlow-condensed text-sm font-semibold uppercase tracking-[3px] text-sps-pink mb-6">
             ▸ Stats du club
           </h3>
-          <div
-            className="glass-card clip-skew-lg relative overflow-hidden p-1"
-            style={{
-              boxShadow: "0 0 0 1px hsl(330 85% 49% / 0.15), 0 0 30px hsl(264 70% 20% / 0.3)",
-            }}
-          >
-            <div
-              className="absolute top-0 left-0 right-0 h-[3px]"
-              style={{ background: "linear-gradient(90deg, hsl(264 70% 38%), hsl(330 85% 49%))" }}
-            />
-            <div className="overflow-hidden rounded-lg">
-              <iframe
-                allowTransparency={true}
-                frameBorder="0"
-                height="160"
-                scrolling="no"
-                src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
-                width="300"
-                title="Statistiques Strava du club SPS"
-                className="block"
-              />
-            </div>
-          </div>
+          <iframe
+            allowTransparency={true}
+            frameBorder="0"
+            height="160"
+            scrolling="no"
+            src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
+            width="300"
+            title="Statistiques Strava du club SPS"
+            className="block"
+          />
         </div>
 
         <div className="text-center mt-12">
