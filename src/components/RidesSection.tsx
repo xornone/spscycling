@@ -90,7 +90,7 @@ const RidesSection = () => {
               className="absolute top-0 left-0 right-0 h-[3px]"
               style={{ background: "linear-gradient(90deg, hsl(264 70% 38%), hsl(330 85% 49%))" }}
             />
-            <div className="overflow-hidden rounded-lg" style={{ background: "hsl(264 80% 5%)" }}>
+            <div className="overflow-hidden rounded-lg">
               <iframe
                 allowTransparency={true}
                 frameBorder="0"
@@ -100,10 +100,6 @@ const RidesSection = () => {
                 width="300"
                 title="Statistiques Strava du club SPS"
                 className="block"
-                style={{
-                  filter: "invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9)",
-                  opacity: 0.9,
-                }}
               />
             </div>
           </div>
