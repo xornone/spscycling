@@ -1120,14 +1120,21 @@ function renderToCanvas(W, H, S, onBlob, onError) {
 
     // Export
     cv.toBlob(blob=>{
-      const url=URL.createObjectURL(blob);
-      const a=document.createElement('a');
-      a.download='sortie_velo_instagram.png';
-      a.href=url; a.click();
-      URL.revokeObjectURL(url);
+      if (onBlob) onBlob(blob);
     },'image/png');
 
   }); // end Promise.all
+}
+
+function exportPNG() {
+  const W = 1080, H = 1440, S = 2;
+  renderToCanvas(W, H, S, (blob) => {
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.download='sortie_velo_instagram.png';
+    a.href=url; a.click();
+    URL.revokeObjectURL(url);
+  });
 }
 
 // Init date on load
