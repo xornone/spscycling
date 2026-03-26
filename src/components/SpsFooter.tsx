@@ -17,6 +17,17 @@ const SpsFooter = () => {
         © {new Date().getFullYear()} SPS – Solo Plus Solo. Montpellier.
       </p>
 
+      <iframe
+        allowTransparency={true}
+        frameBorder="0"
+        height="160"
+        scrolling="no"
+        src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
+        width="300"
+        title="Statistiques Strava du club SPS"
+        className="block"
+      />
+
       <div className="flex gap-6">
         {[
           { label: "Instagram", href: "https://www.instagram.com/spscycling/", external: true },
