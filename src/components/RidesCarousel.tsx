@@ -1,14 +1,9 @@
 import { useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import sortie1 from "@/assets/rides/sortie-1.png";
+import sortie2 from "@/assets/rides/sortie-2.png";
 
-// Placeholder images — replace with real ones
-const images = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-];
+const images = [sortie1, sortie2];
 
 const RidesCarousel = () => {
   const [current, setCurrent] = useState(0);
