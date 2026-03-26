@@ -81,10 +81,7 @@ const RidesSection = () => {
             ▸ Stats du club
           </h3>
           <div
-            className="glass-card p-6 rounded-xl overflow-hidden inline-block"
-            style={{
-              boxShadow: "0 0 0 1px hsl(330 85% 49% / 0.2), 0 0 30px hsl(264 70% 20% / 0.4)",
-            }}
+            className="rounded-xl overflow-hidden inline-block"
           >
             <iframe
               allowTransparency={true}
@@ -94,7 +91,10 @@ const RidesSection = () => {
               src="https://www.strava.com/clubs/1622153/latest-rides/4a6a40ce793c0ee74b9423143f32d4b949d0339c?show_rides=false"
               width="300"
               title="Statistiques Strava du club SPS"
-              className="block"
+              className="block rounded-xl"
+              style={{
+                filter: "invert(1) hue-rotate(180deg)",
+              }}
             />
           </div>
         </div>
