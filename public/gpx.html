@@ -742,8 +742,7 @@ function update() {
   document.getElementById('p-cta').textContent = document.getElementById('i-cta').value;
 }
 
-function exportPNG() {
-  const W = 1080, H = 1440; // Instagram portrait 3:4
+function renderToCanvas(W, H, S, onBlob, onError) {
   const S = 2; // 540*2=1080, 720*2=1440
 
   const vals = {
