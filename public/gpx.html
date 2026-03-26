@@ -640,9 +640,75 @@ select option { color: #000; background: #fff; }
     </div>
   </div>
 
-  <button class="btn-export" onclick="exportPNG()">↓ Exporter PNG haute résolution</button>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+    <button class="btn-export" onclick="exportPNG()">↓ Exporter PNG haute résolution</button>
+    <button class="btn-export" onclick="publishToFrontPage()" style="background:linear-gradient(135deg,#7c00c8,#ff1ea0);border-color:#ff1ea0;" id="btn-publish">🚀 Publier en page d'accueil</button>
+  </div>
   <p class="note">Capture d'écran ou export → Instagram · Format 4:5</p>
+  <div id="publish-toast" style="display:none;position:fixed;top:20px;right:20px;background:#1a1a2e;border:1px solid #ff1ea0;color:#fff;padding:16px 24px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-size:15px;z-index:9999;box-shadow:0 0 30px rgba(255,30,160,0.3);"></div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const SUPABASE_URL = 'https://qnmxhownxjlhtdrnufvu.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFubXhob3dueGpsaHRkcm51ZnZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5MjU4OTksImV4cCI6MjA4OTUwMTg5OX0.UFgdEuqhHfHVb9etZQE2XaE3vFVVc_pm4Hrh9GmHYts';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function showToast(msg, isError) {
+  const t = document.getElementById('publish-toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  t.style.borderColor = isError ? '#ff4444' : '#ff1ea0';
+  setTimeout(() => t.style.display = 'none', 4000);
+}
+
+async function publishToFrontPage() {
+  const btn = document.getElementById('btn-publish');
+  btn.disabled = true;
+  btn.textContent = '⏳ Publication en cours...';
+
+  try {
+    const W = 1080, H = 1440, S = 2;
+    // Re-use the existing exportPNG canvas logic but capture the blob
+    const blob = await new Promise((resolve, reject) => {
+      // We need to call the same render logic. Let's trigger it via a helper.
+      renderToCanvas(W, H, S, resolve, reject);
+    });
+
+    const fileName = `ride_${Date.now()}.png`;
+    const { data: uploadData, error: uploadErr } = await sb.storage
+      .from('ride-images')
+      .upload(fileName, blob, { contentType: 'image/png', upsert: true });
+    if (uploadErr) throw uploadErr;
+
+    const { data: urlData } = sb.storage.from('ride-images').getPublicUrl(fileName);
+    const imageUrl = urlData.publicUrl;
+
+    const vals = {
+      title: document.getElementById('i-t1').value + ' ' + document.getElementById('i-t2').value,
+      ride_date: document.getElementById('i-date').value,
+      ride_time: document.getElementById('i-time').value,
+      distance: document.getElementById('i-dist').value,
+      elevation: document.getElementById('i-dplus').value,
+      level: document.getElementById('i-niveau').value,
+      meeting_point: document.getElementById('i-rdv').value,
+      ride_type: document.getElementById('i-type').value,
+      image_url: imageUrl,
+    };
+
+    const { error: insertErr } = await sb.from('rides').insert(vals);
+    if (insertErr) throw insertErr;
+
+    showToast('✅ Sortie publiée en page d\'accueil !', false);
+  } catch (e) {
+    console.error(e);
+    showToast('❌ Erreur : ' + e.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🚀 Publier en page d\'accueil';
+  }
+}
+</script>
 
 
 <script>
