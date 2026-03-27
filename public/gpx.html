@@ -628,7 +628,7 @@ select option { color: #000; background: #fff; }
       <select id="i-niveau" onchange="update()">
         <option value="Tous niveaux, social ride !">Tous niveaux, social ride !</option>
         <option value="Groupe vert 🟢  20–25 km/h">Groupe vert 🟢  20–25 km/h</option>
-        <option value="Groupe noir ⚫️  27–32 km/h">Groupe noir ⚫️  27–32 km/h</option>
+        <option value="Groupe noir ⚫️  27–29 km/h">Groupe noir ⚫️  27–29 km/h</option>
       </select>
     </div>
   </div>
@@ -1115,16 +1115,16 @@ function generateText() {
 
   if (isNoir) {
     emoji = '⚫️';
-    niveauLine = `⚫️ Groupe noir : 27–32 km/h`;
-    hashExtraLevel = '#groupenoir #rythme';
+    niveauLine = `⚫️ Groupe noir : 27–29 km/h`;
+    hashExtraLevel = '#groupenoir';
   } else if (isVert) {
     emoji = '🟢';
     niveauLine = `🟢 Groupe vert : 20–25 km/h`;
-    hashExtraLevel = '#groupevert #decouverte';
+    hashExtraLevel = '#groupevert';
   } else {
     emoji = '💜';
     niveauLine = `💜 Tous niveaux bienvenus – Social ride`;
-    hashExtraLevel = '#socialride #tousniveaux';
+    hashExtraLevel = '#socialride';
   }
 
   const groupLabel = isNoir ? 'GROUPE NOIR ⚫️' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
@@ -1168,7 +1168,7 @@ ${niveauLine}
 
 Viens te challenger et partager la route avec la team 💜
 
-#spscycling #cyclinglife #sortievelo #groupride #cyclingcommunity #velo #cyclisme #ridewithus #montpellier #herault #roadbike #cyclingpassion #bikeporn #cyclist #dimanche #enduranceride #veloaddict #triathlontraining #rideandshare #clubcycling ${hashExtraLevel}`;
+#spscycling #sortievelo #montpellier #groupride ${hashExtraLevel}`;
 
   document.getElementById('generated-text').value = text;
   document.getElementById('text-output-box').style.display = 'block';
