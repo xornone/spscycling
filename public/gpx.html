@@ -644,6 +644,32 @@ select option { color: #000; background: #fff; }
   <p class="note">Capture d'écran ou export → Instagram · Format 4:5</p>
 </div>
 
+<!-- TEXT GENERATOR -->
+<div class="controls" id="text-output-box" style="display:none;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <div class="ctrl-title" style="margin-bottom:0;">Texte Instagram généré</div>
+    <button onclick="copyText()" id="copy-btn" style="
+      background:rgba(255,30,160,0.15);
+      border:1px solid rgba(255,60,180,0.4);
+      border-radius:3px;padding:7px 16px;cursor:pointer;
+      font-family:Orbitron,monospace;font-size:9px;letter-spacing:2px;
+      color:rgba(255,80,180,0.9);text-transform:uppercase;
+      transition:all 0.2s;
+    ">📋 Copier</button>
+  </div>
+  <textarea id="generated-text" readonly style="
+    width:100%;height:280px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,60,180,0.15);
+    border-radius:4px;
+    color:rgba(255,255,255,0.85);
+    font-family:'Barlow',sans-serif;
+    font-size:13px;line-height:1.7;
+    padding:14px;resize:none;outline:none;
+    white-space:pre-wrap;
+  "></textarea>
+</div>
+
 
 <script>
 // Set background image from base64
@@ -1060,9 +1086,106 @@ function exportPNG() {
       a.download='sortie_velo_instagram.png';
       a.href=url; a.click();
       URL.revokeObjectURL(url);
+      // Generate Instagram caption text
+      generateText();
     },'image/png');
 
   }); // end Promise.all
+}
+
+// ---- TEXT GENERATOR ----
+function generateText() {
+  const niveau  = document.getElementById('p-niveau').textContent.trim();
+  const t1      = document.getElementById('i-t1').value.trim();
+  const t2      = document.getElementById('i-t2').value.trim();
+  const dist    = document.getElementById('i-dist').value.trim();
+  const dplus   = document.getElementById('i-dplus').value.trim();
+  const time    = document.getElementById('i-time').value.trim();
+  const rdv     = document.getElementById('p-rdv').textContent.trim();
+  const date    = document.getElementById('p-date').textContent.trim();
+
+  const title   = `${t1} ${t2}`.toUpperCase();
+  const isNoir  = niveau.toLowerCase().includes('noir');
+  const isVert  = niveau.toLowerCase().includes('vert');
+  const isSocial= niveau.toLowerCase().includes('social') || niveau.toLowerCase().includes('tous');
+
+  let niveauLine = '';
+  let emoji = '';
+  let hashExtraLevel = '';
+
+  if (isNoir) {
+    emoji = '⚫️';
+    niveauLine = `⚫️ Groupe noir : 27–32 km/h`;
+    hashExtraLevel = '#groupenoir #rythme';
+  } else if (isVert) {
+    emoji = '🟢';
+    niveauLine = `🟢 Groupe vert : 20–25 km/h`;
+    hashExtraLevel = '#groupevert #decouverte';
+  } else {
+    emoji = '💜';
+    niveauLine = `💜 Tous niveaux bienvenus – Social ride`;
+    hashExtraLevel = '#socialride #tousniveaux';
+  }
+
+  const groupLabel = isNoir ? 'GROUPE NOIR ⚫️' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
+
+  const accroches = isNoir
+    ? [
+        `Direction les routes autour de Montpellier pour une belle sortie club 🔥
+Du rythme, du dénivelé et surtout du plaisir à rouler ensemble.`,
+        `On remet ça ! Sortie club ce ${date} avec le groupe noir 🔥
+Allure soutenue, bonne ambiance et belles routes au programme.`,
+        `Belle sortie au programme ce ${date} 💪
+On sort les jambes, on pousse le rythme et on profite de la route ensemble.`
+      ]
+    : isVert
+    ? [
+        `Sortie tranquille et conviviale ce ${date} 🌿
+Parfait pour découvrir de belles routes et rouler en bonne compagnie.`,
+        `On se retrouve pour une sortie décontractée ce ${date} 😊
+Allure douce, bonne humeur et belles routes garanties !`,
+        `Ce ${date}, on prend le temps de rouler ensemble et de profiter du paysage 🌄`
+      ]
+    : [
+        `Ce ${date}, on sort tous ensemble pour le plaisir de rouler 💜
+Peu importe ton niveau, l'essentiel c'est d'être là !`,
+        `Social ride ce ${date} – venez comme vous êtes 🙌
+Bonne ambiance, beau parcours et plaisir partagé au programme.`,
+        `On se retrouve ce ${date} pour une sortie à l'ambiance conviviale 🚴
+Tous les niveaux sont les bienvenus !`
+      ];
+
+  const accroche = accroches[Math.floor(Math.random() * accroches.length)];
+
+  const text =
+`${groupLabel} - ${title} SPS
+
+${accroche}
+
+📍 ${dist} | ${dplus}
+🕘 Départ ${time} – ${rdv}
+${niveauLine}
+
+Viens te challenger et partager la route avec la team 💜
+
+#spscycling #cyclinglife #sortievelo #groupride #cyclingcommunity #velo #cyclisme #ridewithus #montpellier #herault #roadbike #cyclingpassion #bikeporn #cyclist #dimanche #enduranceride #veloaddict #triathlontraining #rideandshare #clubcycling ${hashExtraLevel}`;
+
+  document.getElementById('generated-text').value = text;
+  document.getElementById('text-output-box').style.display = 'block';
+  document.getElementById('text-output-box').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyText() {
+  const ta = document.getElementById('generated-text');
+  ta.select();
+  ta.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(ta.value).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = '✅ Copié !';
+    setTimeout(() => btn.textContent = '📋 Copier', 2000);
+  }).catch(() => {
+    document.execCommand('copy');
+  });
 }
 
 // Init date on load
