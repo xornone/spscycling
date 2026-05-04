@@ -16,8 +16,8 @@ const rides = [
     name: "Sortie longue",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 (entre 20 et 25 km/h)" },
-      { icon: null, text: "Groupe noir ⚫️ (entre 27 et 29 km/h)" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 (entre 23 et 26 km/h)" },
+      { icon: null, text: "Groupe noir ⚫️ (entre 28 et 30 km/h)" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Endurance",
