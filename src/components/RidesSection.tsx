@@ -7,7 +7,7 @@ const rides = [
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 20km" },
       { icon: <Users size={16} />, text: "Allures/Niveau : Tous niveaux" },
-      { icon: <MapPin size={16} />, text: "Départ depuis le Marché du Lez à 18h15" },
+      { icon: <MapPin size={16} />, text: "Départ depuis le Marché du Lez à 18h45" },
     ],
     pill: "Social",
   },
