@@ -2,6 +2,16 @@ import { TrendingUp, Users, MapPin } from "lucide-react";
 
 const rides = [
   {
+    day: "MARDI",
+    name: "Social ride du mardi",
+    details: [
+      { icon: <TrendingUp size={16} />, text: "Environ 50km / 2h" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Similaire groupe vert 🟢" },
+      { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
+    ],
+    pill: "Social",
+  },
+  {
     day: "JEUDI",
     name: "Social Ride du jeudi 🚴 & 🍻",
     details: [
@@ -37,7 +47,7 @@ const RidesSection = () => {
         <span className="section-tag">Programme</span>
         <h2 className="section-title">Nos sorties</h2>
         <div className="divider-gradient" />
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
           {rides.map((ride) => (
             <div
               key={ride.day}
