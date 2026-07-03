@@ -47,7 +47,7 @@ const RidesSection = () => {
         <span className="section-tag">Programme</span>
         <h2 className="section-title">Nos sorties</h2>
         <div className="divider-gradient" />
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
           {rides.map((ride) => (
             <div
               key={ride.day}
