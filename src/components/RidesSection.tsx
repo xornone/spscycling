@@ -9,7 +9,7 @@ const rides = [
       { icon: <Users size={16} />, text: "Allures/Niveau : Similaire groupe vert 🟢" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
-    pill: "Social",
+    pill: "Social/intermédiaire",
   },
   {
     day: "JEUDI",
@@ -26,8 +26,8 @@ const rides = [
     name: "Sortie longue",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 70/100km" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 (entre 23 et 26 km/h)" },
-      { icon: null, text: "Groupe noir ⚫️ 28-30 km/h" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 23-26 km/h" },
+      { icon: null, text: "Groupe violet 🟣 27-29 km/h" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Endurance",
