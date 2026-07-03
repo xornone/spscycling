@@ -2,6 +2,16 @@ import { TrendingUp, Users, MapPin } from "lucide-react";
 
 const rides = [
   {
+    day: "MARDI",
+    name: "Social ride du mardi",
+    details: [
+      { icon: <TrendingUp size={16} />, text: "Environ 50km / 2h" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Similaire groupe vert 🟢" },
+      { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
+    ],
+    pill: "Social",
+  },
+  {
     day: "JEUDI",
     name: "Social Ride du jeudi 🚴 & 🍻",
     details: [
