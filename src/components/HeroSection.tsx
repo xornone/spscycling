@@ -35,7 +35,7 @@ const HeroSection = () => {
           {[
           { value: "2025", label: "Fondé en" },
           { value: "40+", label: "Membres actifs" },
-          { value: "2", label: "Sorties / semaine" },
+          { value: "3", label: "Sorties / semaine" },
           { value: "∞", label: "Kilomètres partagés" }].
           map((stat) =>
           <div key={stat.label} className="text-center">
