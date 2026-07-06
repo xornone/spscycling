@@ -22,8 +22,8 @@ const AboutSection = () => {
           <p className="text-foreground/65 leading-relaxed font-light">
             Si tu es déjà à l’aise sur les sorties route et que tu souhaites découvrir le plaisir de rouler
             en groupe dans une ambiance bienveillante, tu trouveras naturellement ta place chez SPS.
-            Que ton objectif soit de progresser, de préparer des cyclosportives ou simplement de partager
-            de belles sorties, tu seras entouré de passionnés prêts à t’accueillir.
+            Que ton objectif soit de progresser ou simplement de partager de belles sorties, tu seras
+            entouré de passionnés prêts à t’accueillir.
           </p>
         </div>
 
