@@ -13,11 +13,11 @@ const rides = [
   },
   {
     day: "JEUDI",
-    name: "Social Ride du jeudi 🚴 & 🍻",
+    name: "Social ride du jeudi",
     details: [
-      { icon: null, text: "Environ 20km" },
-      { icon: null, text: "Allures/Niveau : Tous niveaux" },
-      { icon: null, text: "Départ depuis le Marché du Lez à 18h45" },
+      { icon: <TrendingUp size={16} />, text: "Environ 20km" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Tous niveaux" },
+      { icon: <MapPin size={16} />, text: "Départ depuis le Marché du Lez à 18h45" },
     ],
     pill: "Social",
   },
