@@ -6,7 +6,7 @@ const steps = [
   {
     num: "02",
     title: "Viens tester",
-    text: "Rejoins-nous pour une sortie découverte, sans engagement.",
+    text: "Rejoins-nous pour deux sorties découvertes, sans engagement.",
   },
   {
     num: "03",
