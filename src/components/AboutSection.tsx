@@ -9,18 +9,21 @@ const AboutSection = () => {
           <h2 className="section-title">Rouler ensemble,<br />progresser ensemble</h2>
           <div className="divider-gradient" />
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            SPS est né d'une envie commune : celle d'en finir avec les sorties en solo. Alors on a créé
-            un club pour réunir des passionnés de vélo de route à Montpellier qui veulent partager
-            plus que des kilomètres. Un club ouvert, bienveillant, où le plaisir de rouler ensemble
-            passe avant tout.
+            SPS est né d’une envie commune : celle d’en finir avec les sorties en solo. Nous avons créé
+            un club pour rassembler des passionnés de vélo de route autour d’une même envie : rouler
+            ensemble, progresser et partager de bons moments. Chez SPS, la convivialité, la sécurité et
+            le plaisir sont au cœur de chaque sortie.
           </p>
           <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            Que tu sois débutant ou rouleur expérimenté, tu trouveras ta place chez SPS. On propose des
-            sorties adaptées à tous les niveaux, dans une ambiance conviviale et motivante.
+            Nos sorties sont organisées par groupes de niveau afin que chacun puisse trouver un rythme
+            qui lui corresponde. L’objectif est de rouler de façon fluide, en peloton, tout en profitant
+            de la sortie et de l’esprit du groupe.
           </p>
           <p className="text-foreground/65 leading-relaxed font-light">
-            Nos sorties sont divisées par groupes de niveau pour que chacun puisse y trouver son compte
-            et progresser à son rythme, sans pression mais toujours dans la bonne humeur.
+            Si tu es déjà à l’aise sur les sorties route et que tu souhaites découvrir le plaisir de rouler
+            en groupe dans une ambiance bienveillante, tu trouveras naturellement ta place chez SPS.
+            Que ton objectif soit de progresser, de préparer des cyclosportives ou simplement de partager
+            de belles sorties, tu seras entouré de passionnés prêts à t’accueillir.
           </p>
         </div>
 
