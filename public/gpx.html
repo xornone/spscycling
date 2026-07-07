@@ -628,7 +628,7 @@ select option { color: #000; background: #fff; }
       <select id="i-niveau" onchange="update()">
         <option value="Tous niveaux, social ride !">Tous niveaux, social ride !</option>
         <option value="Groupe vert 🟢  23–26 km/h">Groupe vert 🟢  23–26 km/h</option>
-        <option value="Groupe noir ⚫️  28–30 km/h">Groupe noir ⚫️  28–30 km/h</option>
+        <option value="Groupe violet 🟣  27–29 km/h">Groupe violet 🟣  27–29 km/h</option>
       </select>
     </div>
   </div>
@@ -1105,7 +1105,7 @@ function generateText() {
   const date    = document.getElementById('p-date').textContent.trim();
 
   const title   = `${t1} ${t2}`.toUpperCase();
-  const isNoir  = niveau.toLowerCase().includes('noir');
+  const isViolet = niveau.toLowerCase().includes('violet');
   const isVert  = niveau.toLowerCase().includes('vert');
   const isSocial= niveau.toLowerCase().includes('social') || niveau.toLowerCase().includes('tous');
 
@@ -1113,10 +1113,10 @@ function generateText() {
   let emoji = '';
   let hashExtraLevel = '';
 
-  if (isNoir) {
-    emoji = '⚫️';
-    niveauLine = `⚫️ Groupe noir : 28–30 km/h`;
-    hashExtraLevel = '#groupenoir';
+  if (isViolet) {
+    emoji = '🟣';
+    niveauLine = `🟣 Groupe violet : 27–29 km/h`;
+    hashExtraLevel = '#groupeviolet';
   } else if (isVert) {
     emoji = '🟢';
     niveauLine = `🟢 Groupe vert : 23–26 km/h`;
@@ -1127,13 +1127,13 @@ function generateText() {
     hashExtraLevel = '#socialride';
   }
 
-  const groupLabel = isNoir ? 'GROUPE NOIR ⚫️' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
+  const groupLabel = isViolet ? 'GROUPE VIOLET 🟣' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
 
-  const accroches = isNoir
+  const accroches = isViolet
     ? [
         `Direction les routes autour de Montpellier pour une belle sortie club 🔥
 Du rythme, du dénivelé et surtout du plaisir à rouler ensemble.`,
-        `On remet ça ! Sortie club ce ${date} avec le groupe noir 🔥
+        `On remet ça ! Sortie club ce ${date} avec le groupe violet 🔥
 Allure soutenue, bonne ambiance et belles routes au programme.`,
         `Belle sortie au programme ce ${date} 💪
 On sort les jambes, on pousse le rythme et on profite de la route ensemble.`
