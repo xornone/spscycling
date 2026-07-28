@@ -3,7 +3,7 @@ import { TrendingUp, Users, MapPin } from "lucide-react";
 const rides = [
   {
     day: "MARDI",
-    name: "Social ride du mardi",
+    name: "Ride du mardi",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 50km / 2h" },
       { icon: <Users size={16} />, text: "Allures/Niveau : Similaire groupe vert 🟢" },
