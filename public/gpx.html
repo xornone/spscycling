@@ -1106,15 +1106,20 @@ function generateText() {
   const date    = document.getElementById('p-date').textContent.trim();
 
   const title   = `${t1} ${t2}`.toUpperCase();
-  const isViolet = niveau.toLowerCase().includes('violet');
-  const isVert  = niveau.toLowerCase().includes('vert');
-  const isSocial= niveau.toLowerCase().includes('social') || niveau.toLowerCase().includes('tous');
+  const isUnique = niveau.toLowerCase().includes('unique');
+  const isViolet = !isUnique && niveau.toLowerCase().includes('violet');
+  const isVert  = !isUnique && niveau.toLowerCase().includes('vert');
+  const isSocial= !isUnique && (niveau.toLowerCase().includes('social') || niveau.toLowerCase().includes('tous'));
 
   let niveauLine = '';
   let emoji = '';
   let hashExtraLevel = '';
 
-  if (isViolet) {
+  if (isUnique) {
+    emoji = '🟣🟢';
+    niveauLine = `🟣🟢 Groupe unique – ouvert à tous les niveaux`;
+    hashExtraLevel = '#groupeunique';
+  } else if (isViolet) {
     emoji = '🟣';
     niveauLine = `🟣 Groupe violet : 27–29 km/h`;
     hashExtraLevel = '#groupeviolet';
@@ -1128,9 +1133,18 @@ function generateText() {
     hashExtraLevel = '#socialride';
   }
 
-  const groupLabel = isViolet ? 'GROUPE VIOLET 🟣' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
+  const groupLabel = isUnique ? 'GROUPE UNIQUE 🟣🟢' : isViolet ? 'GROUPE VIOLET 🟣' : isVert ? 'GROUPE VERT 🟢' : 'SOCIAL RIDE 💜';
 
-  const accroches = isViolet
+  const accroches = isUnique
+    ? [
+        `Ce ${date}, on roule tous ensemble dans un seul groupe 🟣🟢
+Ouvert à tous les niveaux, l'objectif est de partager un bon moment sur le vélo.`,
+        `Sortie groupe unique ce ${date} 🚴
+Un seul peloton, une belle ambiance et des routes sympas au programme.`,
+        `On se retrouve ce ${date} pour rouler ensemble, sans distinction de niveau 🙌
+Belle sortie et convivialité garanties !`
+      ]
+    : isViolet
     ? [
         `Direction les routes autour de Montpellier pour une belle sortie club 🔥
 Du rythme, du dénivelé et surtout du plaisir à rouler ensemble.`,
