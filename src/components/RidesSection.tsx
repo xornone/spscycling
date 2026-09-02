@@ -1,4 +1,5 @@
-import { TrendingUp, Users, MapPin } from "lucide-react";
+import { useState } from "react";
+import { TrendingUp, Users, MapPin, ChevronDown } from "lucide-react";
 
 const rides = [
   {
@@ -39,7 +40,14 @@ const rides = [
   },
 ];
 
+const niveaux = [
+  { emoji: "🟢", nom: "Groupe Vert", desc: "24/26 km/h de moyenne (environ 29/30 km/h sur le plat)" },
+  { emoji: "🔴", nom: "Groupe Rouge", desc: "26/28 km/h de moyenne (environ 33/34 km/h sur le plat)" },
+  { emoji: "🟣", nom: "Groupe Violet", desc: "28+ km/h de moyenne (environ 37/38 km/h sur le plat)" },
+];
+
 const RidesSection = () => {
+  const [open, setOpen] = useState(false);
   return (
     <section
       id="sorties"
