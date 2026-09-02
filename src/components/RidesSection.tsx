@@ -109,6 +109,45 @@ const RidesSection = () => {
             Retrouvez nos sorties sur Strava
           </a>
         </div>
+
+        {/* Liste déroulante : niveau des sorties */}
+        <div className="max-w-2xl mx-auto mt-10">
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="w-full flex items-center justify-between gap-3 px-6 py-4 glass-card clip-skew-lg text-left"
+            aria-expanded={open}
+          >
+            <span className="font-barlow-condensed text-lg font-bold tracking-[1px] uppercase text-foreground">
+              Le niveau des sorties :
+            </span>
+            <ChevronDown
+              size={22}
+              className={`text-sps-magenta transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+            />
+          </button>
+          <div
+            className="overflow-hidden transition-all duration-300 ease-out"
+            style={{ maxHeight: open ? 400 : 0, opacity: open ? 1 : 0 }}
+          >
+            <div className="glass-card clip-skew-lg px-8 py-6 mt-3 flex flex-col gap-4">
+              {niveaux.map((n) => (
+                <div key={n.nom} className="flex items-start gap-3 text-[15px] font-light text-foreground/80">
+                  <span className="text-xl leading-none">{n.emoji}</span>
+                  <span>
+                    <span className="font-semibold text-foreground">{n.nom}</span> : {n.desc}
+                  </span>
+                </div>
+              ))}
+              <div className="flex items-start gap-3 text-[15px] font-light text-foreground/70 pt-2 border-t border-white/10">
+                <span className="text-xl leading-none">⚠️</span>
+                <span>
+                  Le groupe Rouge est toutefois soumis à la disponibilité des membres de l’équipe SPS. Il ne sera donc pas nécessairement proposé tous les dimanches.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
