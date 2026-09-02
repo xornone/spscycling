@@ -5,7 +5,7 @@ import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
 import CuissardSection from "@/components/CuissardSection";
 import JoinSection from "@/components/JoinSection";
-import ContactSection from "@/components/ContactSection";
+// import ContactSection from "@/components/ContactSection"; // mis hors ligne — conservé
 import SocialSection from "@/components/SocialSection";
 
 import CookieBanner from "@/components/CookieBanner";
@@ -26,7 +26,7 @@ const Index = () => {
         }}
       >
         <JoinSection />
-        <ContactSection />
+        {/* <ContactSection /> */ /* mis hors ligne — conservé */}
         <SocialSection />
       </div>
       <SpsFooter />
