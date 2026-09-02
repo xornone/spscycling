@@ -21,7 +21,7 @@ const SpsFooter = () => {
         {[
           { label: "Instagram", href: "https://www.instagram.com/spscycling/", external: true },
           { label: "Strava", href: "https://www.strava.com/clubs/spscycling", external: true },
-          { label: "Contact", href: "#contact", external: false },
+          // { label: "Contact", href: "#contact", external: false }, // mis hors ligne — conservé
           { label: "Mentions légales", href: "/mentions-legales", external: false },
         ].map((link) => (
           <a
