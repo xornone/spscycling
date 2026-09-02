@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
+import CuissardSection from "@/components/CuissardSection";
 import JoinSection from "@/components/JoinSection";
 import ContactSection from "@/components/ContactSection";
 import SocialSection from "@/components/SocialSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <AboutSection />
       <RidesSection />
       <JerseySection />
+      <CuissardSection />
       <div
         style={{
           background: "linear-gradient(180deg, hsl(264 80% 5%) 0%, hsl(264 80% 10%) 30%, hsl(264 80% 8%) 60%, hsl(264 80% 5%) 100%)",
