@@ -6,7 +6,8 @@ const rides = [
     name: "Ride du mardi",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 50km / 2h" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 24-26 km/h" },
+      { icon: <Users size={16} />, text: "Allures/Niveau :" },
+      { icon: null, text: "Groupe vert 🟢 24-26 km/h" },
       { icon: null, text: "Groupe rouge 🔴 26-28 km/h" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
@@ -17,7 +18,8 @@ const rides = [
     name: "Social ride du jeudi",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 30km" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢" },
+      { icon: <Users size={16} />, text: "Allures/Niveau :" },
+      { icon: null, text: "Groupe vert 🟢" },
       { icon: <MapPin size={16} />, text: "Départ depuis le Marché du Lez" },
     ],
     pill: "Social",
@@ -27,7 +29,8 @@ const rides = [
     name: "Sortie longue",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 65/85km" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 23-26 km/h" },
+      { icon: <Users size={16} />, text: "Allures/Niveau :" },
+      { icon: null, text: "Groupe vert 🟢 23-26 km/h" },
       { icon: null, text: "Groupe rouge 🔴 26-28 km/h" },
       { icon: null, text: "Groupe violet 🟣 28+ km/h" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
