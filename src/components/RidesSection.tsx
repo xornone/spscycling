@@ -6,7 +6,8 @@ const rides = [
     name: "Ride du mardi",
     details: [
       { icon: <TrendingUp size={16} />, text: "Environ 50km / 2h" },
-      { icon: <Users size={16} />, text: "Allures/Niveau : Similaire groupe vert 🟢" },
+      { icon: <Users size={16} />, text: "Allures/Niveau : Groupe vert 🟢 24-26 km/h" },
+      { icon: null, text: "Groupe rouge 🔴 26-28 km/h" },
       { icon: <MapPin size={16} />, text: "Départ : variable selon la sortie" },
     ],
     pill: "Social/intermédiaire",
