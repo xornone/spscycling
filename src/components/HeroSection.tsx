@@ -41,14 +41,16 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl" style={{ animation: "fadeDown 1s ease-out" }}>
-        <span className="section-tag">Club Cycliste · Montpellier</span>
+        <span className="section-tag" style={{ color: "#ffffff" }}>
+          Club Cycliste Associatif · Montpellier
+        </span>
         <img
           src={logoSpsWhite}
           alt="SPS"
           className="w-[280px] md:w-[400px] lg:w-[500px] h-auto mx-auto mb-1"
         />
         <p className="font-barlow text-lg md:text-xl font-light text-foreground/65 max-w-xl mx-auto mb-10 leading-relaxed">
-          Club de cyclisme sur route basé à Montpellier. On roule ensemble, on progresse ensemble.
+          Basé à Montpellier. On roule ensemble, on progresse ensemble.
         </p>
         <a href="#about" className="btn-sps">
           Découvrir le club
