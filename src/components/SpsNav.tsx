@@ -43,10 +43,12 @@ const SpsNav = () => {
         ))}
         <li>
           <a
-            href="#about"
+            href="https://www.helloasso.com/associations/sps/adhesions/adhesion-sps-1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-sps !py-2.5 !px-6 !text-xs"
           >
-            Découvrir le club
+            Nous rejoindre
           </a>
         </li>
       </ul>
@@ -72,8 +74,8 @@ const SpsNav = () => {
               {link.label}
             </a>
           ))}
-          <a href="#about" className="btn-sps !py-2.5 !px-6 !text-xs mt-2 text-center" onClick={() => setMobileOpen(false)}>
-            Découvrir le club
+          <a href="https://www.helloasso.com/associations/sps/adhesions/adhesion-sps-1" target="_blank" rel="noopener noreferrer" className="btn-sps !py-2.5 !px-6 !text-xs mt-2 text-center" onClick={() => setMobileOpen(false)}>
+            Nous rejoindre
           </a>
         </div>
       )}
