@@ -4,7 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import RidesSection from "@/components/RidesSection";
 import JerseySection from "@/components/JerseySection";
 import CuissardSection from "@/components/CuissardSection";
-import JoinSection from "@/components/JoinSection";
+// import JoinSection from "@/components/JoinSection"; // mis hors ligne — conservé
 // import ContactSection from "@/components/ContactSection"; // mis hors ligne — conservé
 import SocialSection from "@/components/SocialSection";
 
@@ -25,7 +25,7 @@ const Index = () => {
           background: "linear-gradient(180deg, hsl(264 80% 5%) 0%, hsl(264 80% 10%) 30%, hsl(264 80% 8%) 60%, hsl(264 80% 5%) 100%)",
         }}
       >
-        <JoinSection />
+        {/* <JoinSection /> */ /* mis hors ligne — conservé */}
         {/* <ContactSection /> */ /* mis hors ligne — conservé */}
         <SocialSection />
       </div>
