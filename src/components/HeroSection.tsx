@@ -10,18 +10,25 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroRiders.url})` }}
       />
-      {/* Dark gradient overlay — fondu parfait, texte toujours lisible */}
+      {/* Dark gradient overlay — fondu parfait, photo visible, texte lisible */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, hsl(264 80% 5% / 0.78) 0%, hsl(264 80% 6% / 0.55) 35%, hsl(264 80% 5% / 0.70) 70%, hsl(264 80% 5% / 0.92) 100%)",
+            "linear-gradient(180deg, hsl(264 80% 5% / 0.55) 0%, hsl(264 80% 6% / 0.30) 35%, hsl(264 80% 5% / 0.45) 65%, hsl(264 80% 5% / 0.85) 100%)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at 50% 75%, hsl(330 85% 49% / 0.22) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 72%, hsl(330 85% 49% / 0.20) 0%, transparent 60%)",
+        }}
+      />
+      {/* Vignette latérale pour fondu avec le thème */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 50% 50%, transparent 45%, hsl(264 80% 4% / 0.55) 100%)",
         }}
       />
 
