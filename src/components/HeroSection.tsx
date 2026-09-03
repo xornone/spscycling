@@ -31,6 +31,13 @@ const HeroSection = () => {
           background: "radial-gradient(ellipse at 50% 50%, transparent 45%, hsl(264 80% 4% / 0.55) 100%)",
         }}
       />
+      {/* Voile centré pour le contraste du texte */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 50% 42%, hsl(264 80% 5% / 0.35) 0%, transparent 38%)",
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl" style={{ animation: "fadeDown 1s ease-out" }}>
