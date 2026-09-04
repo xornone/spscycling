@@ -62,7 +62,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto flex justify-center gap-12 md:gap-20 py-6 px-6">
           {[
           { value: "2025", label: "Fondé en" },
-          { value: "80+", label: "Membres actifs" },
+          { value: "100", label: "Membres actifs" },
           { value: "3", label: "Sorties / semaine" },
           { value: "∞", label: "Kilomètres partagés" }].
           map((stat) =>
