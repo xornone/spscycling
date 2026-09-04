@@ -43,12 +43,10 @@ const SpsNav = () => {
         ))}
         <li>
           <a
-            href="https://www.helloasso.com/associations/sps/adhesions/adhesion-sps-1"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#communaute"
             className="btn-sps !py-2.5 !px-6 !text-xs"
           >
-            Nous rejoindre
+            Suis-nous
           </a>
         </li>
       </ul>
