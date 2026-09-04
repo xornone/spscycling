@@ -1,6 +1,7 @@
 const SocialSection = () => {
   return (
     <section
+      id="communaute"
       className="py-20 px-6 md:px-12 max-w-[1200px] mx-auto text-center"
     >
       <span className="section-tag">Communauté</span>
