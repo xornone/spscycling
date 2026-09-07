@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,6 +8,19 @@ import Index from "./pages/Index.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import GpxTemplate from "./pages/GpxTemplate.tsx";
 import NotFound from "./pages/NotFound.tsx";
+
+const ExternalRedirect = ({ to }: { to: string }) => {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+      <p className="font-barlow-condensed text-lg tracking-wide">
+        Redirection vers les sorties…
+      </p>
+    </div>
+  );
+};
 
 const queryClient = new QueryClient();
 
