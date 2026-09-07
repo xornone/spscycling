@@ -32,6 +32,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route
+            path="/sorties"
+            element={<ExternalRedirect to="https://spsapp2.vercel.app/" />}
+          />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/gpx" element={<GpxTemplate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
