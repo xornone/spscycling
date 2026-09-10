@@ -1,7 +1,7 @@
 import SpsNav from "@/components/SpsNav";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import RidesSection from "@/components/RidesSection";
+// import RidesSection from "@/components/RidesSection"; // mis hors ligne — conservé
 import JerseySection from "@/components/JerseySection";
 import CuissardSection from "@/components/CuissardSection";
 // import JoinSection from "@/components/JoinSection"; // mis hors ligne — conservé
@@ -17,7 +17,7 @@ const Index = () => {
       <SpsNav />
       <HeroSection />
       <AboutSection />
-      <RidesSection />
+      {/* <RidesSection /> */ /* mis hors ligne — conservé */}
       <JerseySection />
       <CuissardSection />
       <div
