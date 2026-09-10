@@ -17,7 +17,7 @@ const Index = () => {
       <SpsNav />
       <HeroSection />
       <AboutSection />
-      <RidesSection />
+      {/* <RidesSection /> */ /* mis hors ligne — conservé */}
       <JerseySection />
       <CuissardSection />
       <div
