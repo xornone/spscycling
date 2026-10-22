@@ -1,4 +1,4 @@
-import logoSps from "@/assets/logo-sps-white.png";
+import logoSps from "@/assets/logo-sps-round.png";
 
 const SpsFooter = () => {
   return (
@@ -9,8 +9,8 @@ const SpsFooter = () => {
         borderTop: "1px solid hsl(0 0% 100% / 0.06)",
       }}
     >
-      <a href="#">
-        <img src={logoSps} alt="SPS Cycling" className="h-8 w-auto" />
+      <a href="#" className="flex items-center">
+        <img src={logoSps} alt="SPS Cycling" className="h-10 w-10 object-contain" />
       </a>
 
       <p className="text-foreground/30 text-sm">

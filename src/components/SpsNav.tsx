@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logoSps from "@/assets/logo-sps.png";
+import logoSps from "@/assets/logo-sps-round.png";
 
 const navLinks = [
   { label: "Le club", href: "#about" },
@@ -26,7 +26,7 @@ const SpsNav = () => {
       style={{ borderBottom: scrolled ? "1px solid hsl(330 85% 49% / 0.15)" : "none" }}
     >
       <a href="#" className="flex items-center">
-        <img src={logoSps} alt="SPS Cycling" className="h-8 w-auto" />
+        <img src={logoSps} alt="SPS Cycling" className="h-10 w-10 object-contain" />
       </a>
 
       {/* Desktop */}
