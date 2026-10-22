@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import logoSpsWhite from "@/assets/logo-sps-white.png";
-import heroRiders from "@/assets/hero-riders.jpg.asset.json";
+import heroRiders from "@/assets/hero-riders.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background photo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroRiders.url})` }}
+        style={{ backgroundImage: `url(${heroRiders})` }}
       />
       {/* Dark gradient overlay — fondu parfait, photo visible, texte lisible */}
       <div

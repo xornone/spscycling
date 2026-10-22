@@ -1,4 +1,4 @@
-import cuissardImg from "@/assets/cuissard-sps.png.asset.json";
+import cuissardImg from "@/assets/cuissard-sps.png";
 
 const CuissardSection = () => {
   return (
@@ -30,7 +30,7 @@ const CuissardSection = () => {
             alt="Cuissard SPS"
             className="w-full max-w-[500px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
             style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }}
-            src={cuissardImg.url}
+            src={cuissardImg}
           />
         </div>
       </div>
