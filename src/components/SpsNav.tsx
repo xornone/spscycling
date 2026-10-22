@@ -4,7 +4,7 @@ import logoSps from "@/assets/logo-sps.png";
 
 const navLinks = [
   { label: "Le club", href: "#about" },
-  { label: "Les sorties", href: "#sorties" },
+  // { label: "Les sorties", href: "#sorties" }, // mis hors ligne — conservé
   // { label: "Contact", href: "#contact" }, // mis hors ligne — conservé
 ];
 
