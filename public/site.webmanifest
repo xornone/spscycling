@@ -1,0 +1,19 @@
+{
+  "name": "SPS – Solo Plus Solo",
+  "short_name": "SPS Cycling",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2c0e3a",
+  "background_color": "#0d0514",
+  "display": "standalone"
+}
