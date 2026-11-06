@@ -10,6 +10,7 @@ import SocialSection from "@/components/SocialSection";
 
 import CookieBanner from "@/components/CookieBanner";
 import SpsFooter from "@/components/SpsFooter";
+import { VersionSwitcher } from "@/components/v2/VersionSwitcher";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         <SocialSection />
       </div>
       <SpsFooter />
+      <VersionSwitcher currentVersion="v1" />
       <CookieBanner />
     </div>
   );
