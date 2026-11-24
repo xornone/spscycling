@@ -25,12 +25,12 @@ const JerseySection = () => {
           >
             {/* Background Radial Light Glow */}
             <div
-              className="absolute pointer-events-none transition-all duration-700 -inset-8 md:-inset-16 rounded-full"
+              className="absolute inset-0 pointer-events-none transition-all duration-700 rounded-full"
               style={{
                 background: showBack
                   ? "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.35) 0%, hsl(264 70% 38% / 0.2) 40%, transparent 70%)"
                   : "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)",
-                transform: showBack ? "scale(1.15)" : "scale(1)",
+                transform: showBack ? "scale(1.2)" : "scale(1)",
               }}
             />
 
