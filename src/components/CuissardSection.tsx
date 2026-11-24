@@ -9,11 +9,8 @@ const CuissardSection = () => {
           <span className="section-tag">Équipement</span>
           <h2 className="section-title">Le cuissard SPS</h2>
           <div className="divider-gradient" />
-          <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            Conçu dans le même esprit que le maillot, notre cuissard club associe <strong className="font-semibold text-foreground/80">qualité et confort</strong> : matière technique, maintien musculaire et sanglage pensés pour les longues sorties.
-          </p>
           <p className="text-foreground/65 leading-relaxed font-light">
-            Un équipement haut de gamme, en cohérence totale avec l'identité SPS. Disponible en <strong className="font-semibold text-foreground/80">pré-commande pour les adhérents</strong> du club.
+            Conçu dans le même esprit que le maillot, notre cuissard club associe <strong className="font-semibold text-foreground/80">qualité et confort</strong> : matière technique, maintien musculaire et sanglage pensés pour les longues sorties.
           </p>
         </div>
 
