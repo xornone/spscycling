@@ -49,7 +49,7 @@ const JerseySection = () => {
 
             {/* Jersey Visuals wrapper with smooth scale on interaction */}
             <div
-              className={`relative z-10 w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] mx-auto transition-transform duration-500 ease-out ${
+              className={`relative z-10 w-full max-w-[355px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[550px] mx-auto transition-transform duration-500 ease-out ${
                 showBack ? "scale-105" : "hover:scale-105"
               }`}
               style={{

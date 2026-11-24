@@ -25,7 +25,7 @@ const CuissardSection = () => {
 
           <img
             alt="Cuissard SPS"
-            className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+            className="w-full max-w-[335px] sm:max-w-[420px] md:max-w-[510px] lg:max-w-[530px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
             style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }}
             src={cuissardImg}
           />

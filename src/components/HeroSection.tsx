@@ -64,10 +64,33 @@ const HeroSection = () => {
             { value: "2025", label: "Fondé en" },
             { value: "100", label: "Membres actifs" },
             { value: "3", label: "Sorties / semaine" },
-            { value: "∞", label: "Kilomètres partagés" }
+            { value: "∞", label: "Kilomètres partagés", isInfinity: true }
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-bebas text-xl sm:text-2xl md:text-3xl text-gradient-magenta leading-none">{stat.value}</div>
+            <div key={stat.label} className="text-center flex flex-col items-center justify-center">
+              <div className="font-bebas text-xl sm:text-2xl md:text-3xl text-gradient-magenta leading-none h-6 sm:h-7 md:h-9 flex items-center justify-center">
+                {stat.isInfinity ? (
+                  <svg
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="url(#hero-infinity-gradient)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <linearGradient id="hero-infinity-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="hsl(330 85% 49%)" />
+                        <stop offset="100%" stopColor="hsl(330 100% 65%)" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" />
+                  </svg>
+                ) : (
+                  stat.value
+                )}
+              </div>
               <div className="font-barlow-condensed text-[10px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] text-foreground/50 mt-1">
                 {stat.label}
               </div>
