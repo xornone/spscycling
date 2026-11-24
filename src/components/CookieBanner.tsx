@@ -42,8 +42,8 @@ const CookieBanner = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6">
-      <div className="max-w-2xl mx-auto rounded-sm border border-border bg-card/95 backdrop-blur-xl p-5 md:p-6 shadow-2xl">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] p-3 sm:p-4 md:p-6">
+      <div className="max-w-2xl mx-auto rounded-sm border border-border bg-card/95 backdrop-blur-xl p-4 sm:p-5 md:p-6 shadow-2xl">
         <p className="text-foreground/70 text-sm leading-relaxed mb-4">
           Ce site utilise des cookies pour améliorer votre expérience.
           Consultez nos{" "}

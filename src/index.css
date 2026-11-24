@@ -67,10 +67,11 @@
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
     font-family: 'Barlow', sans-serif;
     overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -84,17 +85,17 @@
   }
 
   .section-tag {
-    @apply font-barlow-condensed text-xs font-semibold uppercase tracking-[4px] mb-4 inline-block;
+    @apply font-barlow-condensed text-[11px] sm:text-xs font-semibold uppercase tracking-[3px] sm:tracking-[4px] mb-3 md:mb-4 inline-block;
     color: hsl(var(--sps-magenta));
   }
 
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
-    @apply text-5xl md:text-6xl mb-6 tracking-wide;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 tracking-wide leading-[1.05];
   }
 
   .divider-gradient {
-    @apply w-[60px] h-[3px] mb-10;
+    @apply w-[45px] sm:w-[60px] h-[3px] mb-6 md:mb-10;
     background: var(--gradient-primary);
     clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
   }
@@ -108,7 +109,7 @@
   }
 
   .btn-sps {
-    @apply font-barlow-condensed text-sm font-bold uppercase tracking-[3px] px-10 py-4 inline-block no-underline transition-all duration-300 cursor-pointer;
+    @apply font-barlow-condensed text-xs sm:text-sm font-bold uppercase tracking-[2px] sm:tracking-[3px] px-8 sm:px-10 py-3.5 sm:py-4 inline-block no-underline transition-all duration-300 cursor-pointer;
     background: var(--gradient-primary);
     color: hsl(var(--foreground));
     clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);

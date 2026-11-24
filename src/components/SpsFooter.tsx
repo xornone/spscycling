@@ -3,21 +3,21 @@ import logoSps from "@/assets/logo-sps-round.png";
 const SpsFooter = () => {
   return (
     <footer
-      className="px-6 md:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6"
+      className="px-5 sm:px-8 md:px-12 py-8 sm:py-12 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center"
       style={{
         background: "hsl(264 80% 3%)",
         borderTop: "1px solid hsl(0 0% 100% / 0.06)",
       }}
     >
-      <a href="#" className="flex items-center">
-        <img src={logoSps} alt="SPS Cycling" className="h-10 w-10 object-contain" />
+      <a href="#" className="flex items-center" aria-label="Accueil SPS">
+        <img src={logoSps} alt="SPS Cycling" className="h-9 w-9 sm:h-10 sm:w-10 object-contain" />
       </a>
 
-      <p className="text-foreground/30 text-sm">
+      <p className="text-foreground/40 text-xs sm:text-sm">
         © {new Date().getFullYear()} SPS – Solo Plus Solo. Montpellier.
       </p>
 
-      <div className="flex gap-6">
+      <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2.5">
         {[
           { label: "Partenaires", href: "#partenaires", external: false },
           { label: "Instagram", href: "https://www.instagram.com/spscycling/", external: true },
@@ -30,7 +30,7 @@ const SpsFooter = () => {
             href={link.href}
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noopener noreferrer" : undefined}
-            className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/30 hover:text-sps-pink transition-colors"
+            className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/40 hover:text-sps-pink transition-colors py-1"
           >
             {link.label}
           </a>

@@ -14,7 +14,7 @@ import SpsFooter from "@/components/SpsFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ scrollBehavior: "smooth" }}>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden" style={{ scrollBehavior: "smooth" }}>
       <SpsNav />
       <HeroSection />
       <AboutSection />

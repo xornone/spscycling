@@ -1,7 +1,7 @@
 const MentionsLegales = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-3xl mx-auto px-6 py-24">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 py-12 sm:py-20 md:py-24">
         <a
           href="/"
           className="inline-block mb-8 font-barlow-condensed text-sm uppercase tracking-widest text-sps-pink hover:text-sps-pink/80 transition-colors"

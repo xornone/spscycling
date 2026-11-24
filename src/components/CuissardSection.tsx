@@ -2,20 +2,20 @@ import cuissardImg from "@/assets/cuissard-sps.png";
 
 const CuissardSection = () => {
   return (
-    <section id="cuissard" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
-      <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-        {/* Text */}
-        <div className="md:order-1 order-2">
+    <section id="cuissard" className="py-14 sm:py-20 md:py-24 px-5 sm:px-8 md:px-12 max-w-[1200px] mx-auto">
+      <div className="grid md:grid-cols-2 gap-10 sm:gap-14 md:gap-20 items-center">
+        {/* Text: Top on mobile (order-1), Left on desktop (order-1) */}
+        <div className="order-1">
           <span className="section-tag">Équipement</span>
           <h2 className="section-title">Le cuissard SPS</h2>
           <div className="divider-gradient" />
-          <p className="text-foreground/65 leading-relaxed font-light">
+          <p className="text-foreground/65 leading-relaxed font-light text-sm sm:text-base">
             Conçu dans le même esprit que le maillot, notre cuissard club associe <strong className="font-semibold text-foreground/80">qualité et confort</strong> : matière technique, maintien musculaire et sanglage pensés pour les longues sorties.
           </p>
         </div>
 
-        {/* Cuissard image */}
-        <div className="relative text-center group md:order-2 order-1">
+        {/* Cuissard image: Below text on mobile (order-2), Right on desktop (order-2) */}
+        <div className="order-2 relative text-center group">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -25,7 +25,7 @@ const CuissardSection = () => {
 
           <img
             alt="Cuissard SPS"
-            className="w-full max-w-[500px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
+            className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
             style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }}
             src={cuissardImg}
           />

@@ -10,10 +10,23 @@ const JerseySection = () => {
   const showBack = isHovered || isFlipped;
 
   return (
-    <section id="maillot" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
-      <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-        {/* Interactive Jersey Container */}
-        <div className="relative text-center select-none">
+    <section id="maillot" className="py-14 sm:py-20 md:py-24 px-5 sm:px-8 md:px-12 max-w-[1200px] mx-auto">
+      <div className="grid md:grid-cols-2 gap-10 sm:gap-14 md:gap-20 items-center">
+        {/* Text: Top on mobile (order-1), Right on desktop (md:order-2) */}
+        <div className="order-1 md:order-2">
+          <span className="section-tag">Équipement</span>
+          <h2 className="section-title">Le maillot SPS</h2>
+          <div className="divider-gradient" />
+          <p className="text-foreground/65 leading-relaxed font-light mb-5 text-sm sm:text-base">
+            Conçu en partenariat avec <strong className="font-semibold text-foreground/80">Gobik</strong>, notre maillot club incarne l'identité SPS : violet profond, accents magenta, et le logo SPS en signature.
+          </p>
+          <p className="text-foreground/65 leading-relaxed font-light text-sm sm:text-base">
+            Un design unique qui te reconnaît sur la route et renforce l'esprit d'équipe à chaque sortie.
+          </p>
+        </div>
+
+        {/* Interactive Jersey Container: Below text on mobile (order-2), Left on desktop (md:order-1) */}
+        <div className="order-2 md:order-1 relative text-center select-none">
           <div
             className="relative inline-block cursor-pointer group"
             onMouseEnter={() => setIsHovered(true)}
@@ -36,7 +49,7 @@ const JerseySection = () => {
 
             {/* Jersey Visuals wrapper with smooth scale on interaction */}
             <div
-              className={`relative z-10 w-full max-w-[500px] mx-auto transition-transform duration-500 ease-out ${
+              className={`relative z-10 w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] mx-auto transition-transform duration-500 ease-out ${
                 showBack ? "scale-105" : "hover:scale-105"
               }`}
               style={{
@@ -70,7 +83,7 @@ const JerseySection = () => {
             <button
               type="button"
               onClick={() => setIsFlipped(false)}
-              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-5 py-2 rounded-full transition-all duration-200 cursor-pointer min-h-[38px] ${
                 !showBack
                   ? "bg-sps-magenta text-white shadow-[0_0_15px_rgba(255,46,147,0.4)] font-semibold"
                   : "bg-white/5 text-foreground/50 hover:text-white border border-white/10"
@@ -81,7 +94,7 @@ const JerseySection = () => {
             <button
               type="button"
               onClick={() => setIsFlipped(true)}
-              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-5 py-2 rounded-full transition-all duration-200 cursor-pointer min-h-[38px] ${
                 showBack
                   ? "bg-sps-magenta text-white shadow-[0_0_15px_rgba(255,46,147,0.4)] font-semibold"
                   : "bg-white/5 text-foreground/50 hover:text-white border border-white/10"
@@ -91,21 +104,8 @@ const JerseySection = () => {
             </button>
           </div>
 
-          <p className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/40 mt-2">
+          <p className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/40 mt-3">
             Survolez ou touchez le maillot pour voir le dos
-          </p>
-        </div>
-
-        {/* Text */}
-        <div>
-          <span className="section-tag">Équipement</span>
-          <h2 className="section-title">Le maillot SPS</h2>
-          <div className="divider-gradient" />
-          <p className="text-foreground/65 leading-relaxed font-light mb-5">
-            Conçu en partenariat avec <strong className="font-semibold text-foreground/80">Gobik</strong>, notre maillot club incarne l'identité SPS : violet profond, accents magenta, et le logo SPS en signature.
-          </p>
-          <p className="text-foreground/65 leading-relaxed font-light">
-            Un design unique qui te reconnaît sur la route et renforce l'esprit d'équipe à chaque sortie.
           </p>
         </div>
       </div>

@@ -21,13 +21,13 @@ const SpsNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 backdrop-blur-xl ${
-        scrolled ? "bg-background/90 border-b border-border" : "bg-background/60"
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 md:px-12 py-3.5 md:py-4 transition-all duration-300 backdrop-blur-xl ${
+        scrolled ? "bg-background/90 border-b border-border shadow-lg" : "bg-background/60"
       }`}
       style={{ borderBottom: scrolled ? "1px solid hsl(330 85% 49% / 0.15)" : "none" }}
     >
-      <a href="#" className="flex items-center">
-        <img src={logoSps} alt="SPS Cycling" className="h-10 w-10 object-contain" />
+      <a href="#" className="flex items-center" aria-label="Accueil SPS">
+        <img src={logoSps} alt="SPS Cycling" className="h-9 w-9 sm:h-10 sm:w-10 object-contain" />
       </a>
 
       {/* Desktop */}
@@ -54,26 +54,33 @@ const SpsNav = () => {
 
       {/* Mobile toggle */}
       <button
-        className="md:hidden text-foreground"
+        type="button"
+        className="md:hidden text-foreground p-2 rounded-lg hover:bg-white/5 active:bg-white/10 transition-colors"
         onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-expanded={mobileOpen}
       >
-        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        {mobileOpen ? <X size={26} /> : <Menu size={26} />}
       </button>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 md:hidden flex flex-col gap-4">
+        <div className="absolute top-full left-0 right-0 bg-background/98 backdrop-blur-2xl border-b border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-2xl">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-barlow-condensed text-sm font-semibold uppercase tracking-[2px] text-foreground/80 hover:text-sps-pink transition-colors"
+              className="font-barlow-condensed text-base font-semibold uppercase tracking-[2px] text-foreground/85 hover:text-sps-pink py-1 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <a href="#communaute" className="btn-sps !py-2.5 !px-6 !text-xs mt-2 text-center" onClick={() => setMobileOpen(false)}>
+          <a
+            href="#communaute"
+            className="btn-sps !py-3 !px-6 !text-xs mt-2 text-center"
+            onClick={() => setMobileOpen(false)}
+          >
             Suis-nous
           </a>
         </div>

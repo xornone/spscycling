@@ -4,7 +4,7 @@ import heroRiders from "@/assets/hero-riders.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background photo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -40,16 +40,16 @@ const HeroSection = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl" style={{ animation: "fadeDown 1s ease-out" }}>
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl pt-16 pb-36 md:pt-20 md:pb-28" style={{ animation: "fadeDown 1s ease-out" }}>
         <span className="section-tag" style={{ color: "#ffffff" }}>
           Club Cycliste Associatif · Montpellier
         </span>
         <img
           src={logoSpsWhite}
           alt="SPS"
-          className="w-[280px] md:w-[400px] lg:w-[500px] h-auto mx-auto mb-1"
+          className="w-[220px] sm:w-[320px] md:w-[420px] lg:w-[500px] h-auto mx-auto mb-2 sm:mb-3"
         />
-        <p className="font-barlow text-lg md:text-xl font-light text-foreground/65 max-w-xl mx-auto mb-10 leading-relaxed">
+        <p className="font-barlow text-sm sm:text-base md:text-xl font-light text-foreground/75 max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed px-2">
           Basé à Montpellier. On roule ensemble, on progresse ensemble.
         </p>
         <a href="#about" className="btn-sps">
@@ -58,30 +58,31 @@ const HeroSection = () => {
       </div>
 
       {/* Stats bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border bg-background/40 backdrop-blur-md">
-        <div className="max-w-5xl mx-auto flex justify-center gap-12 md:gap-20 py-6 px-6">
+      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border bg-background/50 backdrop-blur-md">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-y-3 gap-x-4 sm:gap-8 md:gap-20 py-3 sm:py-5 px-4">
           {[
-          { value: "2025", label: "Fondé en" },
-          { value: "100", label: "Membres actifs" },
-          { value: "3", label: "Sorties / semaine" },
-          { value: "∞", label: "Kilomètres partagés" }].
-          map((stat) =>
-          <div key={stat.label} className="text-center">
-              <div className="font-bebas text-2xl md:text-3xl text-gradient-magenta">{stat.value}</div>
-              <div className="font-barlow-condensed text-xs uppercase tracking-[2px] text-foreground/50 mt-1">
+            { value: "2025", label: "Fondé en" },
+            { value: "100", label: "Membres actifs" },
+            { value: "3", label: "Sorties / semaine" },
+            { value: "∞", label: "Kilomètres partagés" }
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="font-bebas text-xl sm:text-2xl md:text-3xl text-gradient-magenta leading-none">{stat.value}</div>
+              <div className="font-barlow-condensed text-[10px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] text-foreground/50 mt-1">
                 {stat.label}
               </div>
             </div>
-          )}
+          ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator (desktop only to prevent mobile overlap) */}
       <a
         href="#about"
-        className="absolute bottom-24 left-1/2 text-foreground/40"
-        style={{ animation: "bounce-slow 2s infinite" }}>
-        
+        className="hidden md:block absolute bottom-24 left-1/2 -translate-x-1/2 text-foreground/40"
+        style={{ animation: "bounce-slow 2s infinite" }}
+        aria-label="Défiler vers la section Le Club"
+      >
         <ChevronDown size={28} />
       </a>
     </section>);
