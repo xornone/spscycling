@@ -1,22 +1,99 @@
-import jerseyImg from "@/assets/jersey-sps.png";
+import { useState } from "react";
+import jerseyFront from "@/assets/jersey-sps-front.png";
+import jerseyBack from "@/assets/jersey-sps-back.png";
 
 const JerseySection = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  // Show back if either hovered (mouse) or flipped (click/tap on mobile)
+  const showBack = isHovered || isFlipped;
+
   return (
     <section id="maillot" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
       <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-        {/* Jersey image */}
-        <div className="relative text-center group">
+        {/* Interactive Jersey Container */}
+        <div className="relative text-center select-none">
           <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)"
-            }} />
-          
-          <img
-            alt="Maillot SPS"
-            className="w-full max-w-[500px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
-            style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }} src="/lovable-uploads/c2a059d6-3d9a-4c43-9e66-f75090425330.png" />
-          
+            className="relative inline-block cursor-pointer group"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => setIsFlipped((prev) => !prev)}
+            role="button"
+            tabIndex={0}
+            aria-label="Afficher le maillot de dos ou de face"
+          >
+            {/* Background Radial Light Glow */}
+            <div
+              className="absolute pointer-events-none transition-all duration-700 -inset-8 md:-inset-16 rounded-full"
+              style={{
+                background: showBack
+                  ? "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.35) 0%, hsl(264 70% 38% / 0.2) 40%, transparent 70%)"
+                  : "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)",
+                transform: showBack ? "scale(1.15)" : "scale(1)",
+              }}
+            />
+
+            {/* Jersey Visuals wrapper with smooth scale on interaction */}
+            <div
+              className={`relative z-10 w-full max-w-[500px] mx-auto transition-transform duration-500 ease-out ${
+                showBack ? "scale-105" : "hover:scale-105"
+              }`}
+              style={{
+                filter: showBack
+                  ? "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.45))"
+                  : "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.25))",
+              }}
+            >
+              {/* Front view image */}
+              <img
+                src={jerseyFront}
+                alt="Maillot SPS - Face"
+                className={`w-full h-auto transition-opacity duration-500 ease-in-out ${
+                  showBack ? "opacity-0" : "opacity-100"
+                }`}
+              />
+
+              {/* Back view image (stacked directly over front view) */}
+              <img
+                src={jerseyBack}
+                alt="Maillot SPS - Dos avec sponsor La Terrazza"
+                className={`w-full h-auto absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  showBack ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+              />
+            </div>
+          </div>
+
+          {/* Interactive Toggle Pills (for mobile touch & clarity) */}
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <button
+              type="button"
+              onClick={() => setIsFlipped(false)}
+              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+                !showBack
+                  ? "bg-sps-magenta text-white shadow-[0_0_15px_rgba(255,46,147,0.4)] font-semibold"
+                  : "bg-white/5 text-foreground/50 hover:text-white border border-white/10"
+              }`}
+            >
+              Vue Face
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsFlipped(true)}
+              className={`font-barlow-condensed text-xs uppercase tracking-[2px] px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+                showBack
+                  ? "bg-sps-magenta text-white shadow-[0_0_15px_rgba(255,46,147,0.4)] font-semibold"
+                  : "bg-white/5 text-foreground/50 hover:text-white border border-white/10"
+              }`}
+            >
+              Vue Dos
+            </button>
+          </div>
+
+          <p className="font-barlow-condensed text-xs uppercase tracking-wider text-foreground/40 mt-2">
+            Survolez ou touchez le maillot pour voir le dos
+          </p>
         </div>
 
         {/* Text */}
@@ -32,8 +109,8 @@ const JerseySection = () => {
           </p>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default JerseySection;
