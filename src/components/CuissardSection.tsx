@@ -15,17 +15,17 @@ const CuissardSection = () => {
         </div>
 
         {/* Cuissard image: Below text on mobile (order-2), Right on desktop (order-2) */}
-        <div className="order-2 relative text-center group">
+        <div className="order-2 relative text-center group py-10 sm:py-6 md:py-0">
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 pointer-events-none scale-[1.8] sm:scale-[1.35] md:scale-100 transition-transform duration-300"
             style={{
-              background: "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.15) 0%, transparent 70%)"
+              background: "radial-gradient(ellipse at center, hsl(330 85% 49% / 0.18) 0%, transparent 70%)"
             }}
           />
 
           <img
             alt="Cuissard SPS"
-            className="w-full max-w-[335px] sm:max-w-[420px] md:max-w-[510px] lg:max-w-[530px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+            className="w-full max-w-[335px] sm:max-w-[420px] md:max-w-[510px] lg:max-w-[530px] mx-auto relative z-10 drop-shadow-2xl transition-transform duration-500 scale-[1.85] sm:scale-[1.4] md:scale-100 group-hover:scale-[1.9] md:group-hover:scale-105"
             style={{ filter: "drop-shadow(0 30px 60px hsl(330 85% 49% / 0.3))" }}
             src={cuissardImg}
           />

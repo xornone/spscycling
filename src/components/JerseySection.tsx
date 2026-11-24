@@ -26,9 +26,9 @@ const JerseySection = () => {
         </div>
 
         {/* Interactive Jersey Container: Below text on mobile (order-2), Left on desktop (md:order-1) */}
-        <div className="order-2 md:order-1 relative text-center select-none">
+        <div className="order-2 md:order-1 relative text-center select-none py-6 sm:py-3 md:py-0">
           <div
-            className="relative inline-block cursor-pointer group"
+            className="relative inline-block cursor-pointer group my-8 sm:my-4 md:my-0 scale-[1.48] sm:scale-[1.25] md:scale-100 origin-center transition-transform duration-300"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => setIsFlipped((prev) => !prev)}
@@ -79,7 +79,7 @@ const JerseySection = () => {
           </div>
 
           {/* Interactive Toggle Pills (for mobile touch & clarity) */}
-          <div className="flex items-center justify-center gap-3 mt-6">
+          <div className="flex items-center justify-center gap-3 mt-8 sm:mt-6">
             <button
               type="button"
               onClick={() => setIsFlipped(false)}
